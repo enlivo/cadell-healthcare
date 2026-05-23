@@ -4,6 +4,7 @@ import Footer from './components/Footer.jsx';
 import Navigation from './components/Navigation.jsx';
 import About from './pages/About.jsx';
 import Contact from './pages/Contact.jsx';
+import Gallery from './pages/Gallery.jsx';
 import Home from './pages/Home.jsx';
 import Products from './pages/Products.jsx';
 import Quality from './pages/Quality.jsx';
@@ -30,7 +31,7 @@ function FloatingEnquiryButton() {
       href={contact.whatsapp}
       target="_blank"
       rel="noreferrer"
-      className="group fixed bottom-6 right-6 z-[60] inline-flex items-center gap-3 rounded-full bg-[#0F9D76] px-5 py-4 text-sm font-bold text-white shadow-2xl shadow-emerald-800/20 transition-all duration-300 hover:scale-[1.02] hover:bg-[#0b8766] hover:shadow-xl hover:shadow-emerald-800/25 sm:px-6"
+      className="group fixed bottom-8 right-8 z-[60] inline-flex items-center gap-3 rounded-full bg-[#0F9D76] px-5 py-4 text-sm font-bold text-white shadow-2xl shadow-emerald-800/20 transition-all duration-300 hover:scale-[1.02] hover:bg-[#0b8766] hover:shadow-xl hover:shadow-emerald-800/25 sm:px-6"
       aria-label="Need Product Help? Open WhatsApp enquiry"
     >
       <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10">
@@ -58,6 +59,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/quality" element={<Quality />} />
+        <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

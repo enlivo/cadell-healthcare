@@ -1,26 +1,37 @@
 import { Link } from 'react-router-dom';
 import { contact, navItems } from '../data/site.js';
 
-const trustBadges = ['WHO-GMP', 'ISO Certified', 'Ethical Supply', 'Pan India Distribution'];
+const trustBadges = ['WHO-GMP', 'ISO Certified', 'Ethical Practice', 'Quality Focus'];
 
 export default function Footer() {
   return (
     <footer className="bg-[#071d3a] text-white">
       <div className="container-pad grid gap-10 border-b border-white/10 py-14 md:grid-cols-[1.25fr_0.75fr_1fr]">
         <div>
-          <img src="/images/cadell-logo.jpeg" alt="Cadell Healthcare logo" className="mb-5 h-14 rounded bg-white px-2 object-contain" />
-          <h2 className="max-w-sm text-xl font-semibold leading-tight text-white sm:text-2xl">
-            Reliable Pharma Distribution Across India
-          </h2>
-          <p className="max-w-md text-sm leading-7 text-blue-100">
-            Supporting pharmacies, hospitals, distributors, and institutional buyers with dependable healthcare supply solutions.
+          <div className="mb-5 flex w-fit items-center justify-center rounded-2xl border border-white/20 bg-white px-6 py-4 shadow-xl">
+            <img
+              src="/images/cadell-logo-transparent.png"
+              alt="Cadell Healthcare"
+              className="h-[95px] w-auto object-contain object-center"
+              style={{ imageRendering: 'auto' }}
+            />
+          </div>
+          <h3 className="mb-3 text-2xl font-bold text-white">
+            Committed To Trusted Healthcare Solutions
+          </h3>
+          <p className="max-w-sm leading-relaxed text-slate-300">
+            Cadell Healthcare is focused on quality pharmaceutical solutions, patient care, and trusted healthcare relationships.
           </p>
         </div>
         <div>
           <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-sky-200 sm:tracking-[0.24em]">Quick Links</h3>
           <div className="grid gap-3 text-sm text-blue-100">
             {navItems.map((item) => (
-              <Link key={item.path} to={item.path} className="transition hover:translate-x-1 hover:text-white">
+              <Link
+                key={item.path}
+                to={item.path}
+                className="block text-slate-300 transition-all duration-300 hover:translate-x-1 hover:text-emerald-400"
+              >
                 {item.label}
               </Link>
             ))}
@@ -29,12 +40,14 @@ export default function Footer() {
         <div>
           <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-sky-200 sm:tracking-[0.24em]">Business Contact</h3>
           <div className="grid gap-3 text-sm leading-6 text-blue-100">
-            <span className="flex flex-wrap gap-x-1">
-              <strong className="text-white">Phone:</strong>{' '}
-              <a href="tel:+918971799998" className="transition hover:text-white">{contact.phone}</a>
-              <span className="text-white/30"> / </span>
-              <a href="tel:+919060644409" className="transition hover:text-white">{contact.secondaryPhone}</a>
-            </span>
+            <div>
+              <strong className="block text-white">Sales & Billing:</strong>
+              <a href={contact.salesPhoneHref} className="transition hover:text-white">{contact.salesPhone}</a>
+            </div>
+            <div>
+              <strong className="block text-white">Administration & General Enquiries:</strong>
+              <a href={contact.adminPhoneHref} className="transition hover:text-white">{contact.adminPhone}</a>
+            </div>
             <span className="break-words">
               <strong className="text-white">Email:</strong>{' '}
               <a href="mailto:info@cadellhealthcare.com" className="transition hover:text-white">
@@ -55,7 +68,7 @@ export default function Footer() {
           {trustBadges.map((badge) => (
             <span
               key={badge}
-              className="rounded-full border border-sky-300/15 bg-white/8 px-3 py-2 text-[11px] font-bold uppercase tracking-[0.08em] text-sky-100 sm:px-4 sm:text-xs sm:tracking-[0.12em]"
+              className="rounded-full border border-blue-700 bg-blue-900/40 px-4 py-2 transition-all duration-300 hover:border-emerald-400 hover:shadow-lg"
             >
               {badge}
             </span>
@@ -64,7 +77,7 @@ export default function Footer() {
       </div>
       <div className="py-5">
         <div className="container-pad text-xs text-blue-200">
-          © 2026 Cadell Healthcare. Replace legal and registration details before launch.
+          © 2026 Cadell Healthcare. All rights reserved.
         </div>
       </div>
     </footer>

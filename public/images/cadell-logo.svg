@@ -1,7 +1,0 @@
-<svg width="320" height="96" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="4" y="8" width="80" height="80" rx="20" fill="#0f2f5f"/>
-  <path d="M44 24v48M20 48h48" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
-  <path d="M61 22c-3 15-13 25-30 30 17 4 28 14 33 31" stroke="#18a878" stroke-width="6" stroke-linecap="round"/>
-  <text x="102" y="45" fill="#0f2f5f" font-family="Arial, sans-serif" font-size="30" font-weight="800">CADELL</text>
-  <text x="104" y="68" fill="#1f8f6a" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="3">HEALTHCARE</text>
-</svg>

@@ -14,13 +14,14 @@ export default function Navigation() {
     }`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur">
-      <div className="container-pad flex h-20 items-center justify-between md:h-24">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/60 bg-white/95 shadow-sm shadow-blue-950/5">
+      <div className="container-pad flex min-h-24 items-center justify-between">
+        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
           <img
-            src="/images/cadell-logo.jpeg"
-            alt="Cadell Healthcare logo"
-            className="block h-12 w-auto object-contain md:h-14"
+            src="/images/cadell-logo-transparent.png"
+            alt="Cadell Healthcare"
+            className="h-[78px] min-w-[220px] w-auto object-contain object-center"
+            style={{ imageRendering: 'auto' }}
           />
         </Link>
 
@@ -53,7 +54,7 @@ export default function Navigation() {
       </div>
 
       {open && (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
+        <div className="border-t border-slate-200 bg-white/98 shadow-lg shadow-blue-950/5 lg:hidden">
           <nav className="container-pad grid gap-2 py-4">
             {navItems.map((item) => (
               <NavLink key={item.path} to={item.path} className={linkClass} onClick={() => setOpen(false)}>

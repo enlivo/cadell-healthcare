@@ -27,15 +27,15 @@ export default function Contact() {
               Contact
             </p>
             <h1
-              className="text-3xl font-semibold leading-tight sm:text-4xl md:text-6xl"
+              className="text-4xl font-bold leading-tight md:text-6xl"
               style={{
                 textShadow: '0 0 36px rgba(56, 189, 248, 0.28), 0 16px 60px rgba(7, 31, 59, 0.35)',
               }}
             >
-              Send a product, distribution, or business enquiry.
+              Connect With Cadell Healthcare For Product & Business Enquiries.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-blue-50 md:text-lg">
-              Replace the placeholder contact information with Cadell Healthcare phone, email, address, and enquiry process details before publishing.
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-blue-100">
+              Connect with Cadell Healthcare for product, partnership, or business-related enquiries.
             </p>
           </div>
         </div>
@@ -73,26 +73,26 @@ export default function Contact() {
         `}</style>
       </section>
 
-      <section className="section-pad bg-white">
-        <div className="container-pad grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="section-pad cinematic-light">
+        <div className="container-pad relative z-10 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <SectionHeader
               eyebrow="Reach Cadell"
+              eyebrowClassName="text-blue-600 text-lg md:text-xl font-semibold tracking-[0.25em]"
               title="Business enquiries are handled with clear follow-up."
-              text="Connect with Cadell Healthcare for product availability, distribution enquiries, partnership discussions, and business support."
+              text="Connect with Cadell Healthcare for product, partnership, or business-related enquiries."
             />
             <div className="mt-8 grid gap-4">
               {[
                 {
                   icon: Phone,
-                  label: 'Phone',
-                  value: (
-                    <>
-                      <a href="tel:+918971799998" className="transition hover:text-[#1E5AA8]">{contact.phone}</a>
-                      <span className="text-slate-400"> / </span>
-                      <a href="tel:+919060644409" className="transition hover:text-[#1E5AA8]">{contact.secondaryPhone}</a>
-                    </>
-                  ),
+                  label: 'Sales & Billing Queries',
+                  value: <a href={contact.salesPhoneHref} className="transition hover:text-[#1E5AA8]">{contact.salesPhone}</a>,
+                },
+                {
+                  icon: Phone,
+                  label: 'Administrative & General Enquiries',
+                  value: <a href={contact.adminPhoneHref} className="transition hover:text-[#1E5AA8]">{contact.adminPhone}</a>,
                 },
                 {
                   icon: Mail,
@@ -113,7 +113,7 @@ export default function Contact() {
                 return (
                   <div
                     key={item.label}
-                    className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl"
+                    className="premium-card group relative overflow-hidden rounded-2xl border border-white/30 bg-white/82 p-5 backdrop-blur-md transition-all duration-300"
                   >
                     <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-400 opacity-0 transition duration-300 group-hover:opacity-100" />
                     <div className="relative z-10 flex gap-4">
@@ -129,28 +129,28 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className="rounded-[2rem] border border-slate-200 bg-slate-50 p-5 md:p-8">
+          <form className="rounded-[2rem] border border-white/40 bg-white/82 p-5 shadow-2xl shadow-blue-950/8 backdrop-blur-md md:p-8">
             <div className="grid gap-5">
               <label className="grid gap-2 text-sm font-bold text-[#0B2A4A]">
                 Name
-                <input className="min-w-0 rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Your name" />
+                <input className="min-w-0 rounded-xl border border-slate-100 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Your name" />
               </label>
               <label className="grid gap-2 text-sm font-bold text-[#0B2A4A]">
                 Phone / Email
-                <input className="min-w-0 rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Contact detail" />
+                <input className="min-w-0 rounded-xl border border-slate-100 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Contact detail" />
               </label>
               <label className="grid gap-2 text-sm font-bold text-[#0B2A4A]">
                 Enquiry Type
-                <select className="min-w-0 rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
+                <select className="min-w-0 rounded-xl border border-slate-100 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200">
                   <option>Product availability</option>
-                  <option>Distribution enquiry</option>
-                  <option>Vendor partnership</option>
+                  <option>Product enquiry</option>
+                  <option>Healthcare collaboration</option>
                   <option>General business enquiry</option>
                 </select>
               </label>
               <label className="grid gap-2 text-sm font-bold text-[#0B2A4A]">
                 Message
-                <textarea className="min-h-36 min-w-0 rounded-xl border border-slate-200 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Mention products, quantity, location, and expected timeline." />
+                <textarea className="min-h-36 min-w-0 rounded-xl border border-slate-100 bg-white px-4 py-3 font-normal outline-none transition-all duration-300 hover:border-blue-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-200" placeholder="Mention your product enquiry, collaboration interest, or business support request." />
               </label>
               <a
                 href={contact.whatsapp}
@@ -165,16 +165,16 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
-        <div className="container-pad">
+      <section className="cinematic-bluewash py-16 md:py-20">
+        <div className="container-pad relative z-10">
           <SectionHeader
             eyebrow="Visit Our Office"
             title="Mysuru office for business meetings and coordination."
-            text="Cadell Healthcare welcomes distributors, hospitals, and healthcare partners for focused business discussions and operational follow-up."
+            text="Connect with Cadell Healthcare for product, partnership, or business-related enquiries."
           />
 
           <div className="mt-12 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg shadow-blue-950/5">
+            <div className="overflow-hidden rounded-[2rem] border border-slate-100/70 bg-white shadow-2xl shadow-blue-950/8">
               <iframe
                 title="Cadell Healthcare office map"
                 src="https://www.google.com/maps?q=Cadell%20Healthcare%20Pvt%20Ltd%20Mysuru&output=embed"
@@ -185,7 +185,7 @@ export default function Contact() {
             </div>
 
             <div className="grid gap-6">
-              <div className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl">
+              <div className="premium-card group relative overflow-hidden rounded-[2rem] border border-slate-100/70 bg-white/86 p-6 backdrop-blur-md transition-all duration-300">
                 <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-400 opacity-0 transition duration-300 group-hover:opacity-100" />
                 <div className="relative z-10 flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-[#1E5AA8] transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-100 group-hover:text-blue-600">
@@ -208,7 +208,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl">
+              <div className="premium-card group relative overflow-hidden rounded-[2rem] border border-slate-100/70 bg-white/86 p-6 backdrop-blur-md transition-all duration-300">
                 <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-400 opacity-0 transition duration-300 group-hover:opacity-100" />
                 <div className="relative z-10 flex items-start gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-[#1E5AA8] transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-100 group-hover:text-blue-600">
@@ -226,7 +226,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg shadow-blue-950/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div className="premium-card group relative overflow-hidden rounded-[2rem] border border-slate-100/70 bg-white shadow-blue-950/5 transition-all duration-300">
                 <img
                   src="/images/cadell-office.jpg"
                   alt="Cadell Healthcare office"

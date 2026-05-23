@@ -1,33 +1,26 @@
-import { BadgeCheck, Handshake, PackageCheck, Truck } from 'lucide-react';
-
 const items = [
-  { icon: Truck, label: 'Reliable supply' },
-  { icon: BadgeCheck, label: 'Quality-led sourcing' },
-  { icon: PackageCheck, label: 'Broad portfolio' },
-  { icon: Handshake, label: 'Ethical partnerships' },
+  'WHO-GMP Certified',
+  'Ethical Manufacturing',
+  'Quality Healthcare',
+  'Trusted Formulations',
+  'Patient-Centric Care',
 ];
 
 export default function TrustBar() {
-  const marqueeItems = [...items, ...items];
+  const marqueeItems = [...items, ...items, ...items];
 
   return (
-    <div className="w-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-xl shadow-blue-950/8">
-      <div className="group/trust overflow-hidden">
-        <div className="flex w-max gap-3 motion-safe:animate-[trust-marquee_26s_linear_infinite] group-hover/trust:[animation-play-state:paused]">
-        {marqueeItems.map((item, index) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={`${item.label}-${index}`}
-              className="flex min-w-[240px] items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50 px-4 py-4 md:min-w-[280px]"
-            >
-              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sky-100 text-[#1E5AA8] shadow-sm">
-                <Icon className="h-5 w-5" />
+    <div className="h-12 w-full overflow-hidden border-y border-white/5 bg-white/5 shadow-[0_10px_40px_rgba(0,0,0,0.12)]">
+      <div className="group/trust flex h-full items-center overflow-hidden">
+        <div className="flex w-max items-center motion-safe:animate-[trust-marquee_34s_linear_infinite] group-hover/trust:[animation-play-state:paused]">
+          {marqueeItems.map((item, index) => (
+            <div key={`${item}-${index}`} className="flex items-center">
+              <span className="px-5 text-[11px] font-bold uppercase tracking-[0.22em] text-white/75 sm:px-7">
+                {item}
               </span>
-              <span className="text-sm font-bold text-[#0B2A4A]">{item.label}</span>
+              <span className="h-1 w-1 rounded-full bg-cyan-200/45" />
             </div>
-          );
-        })}
+          ))}
         </div>
       </div>
     </div>

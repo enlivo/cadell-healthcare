@@ -4,23 +4,23 @@ import SectionHeader from '../components/SectionHeader.jsx';
 const checks = [
   {
     icon: Factory,
-    title: 'Vendor Review',
-    text: 'Products are sourced through reviewed vendor relationships with attention to reliability, consistency, and market suitability.',
+    title: 'Product Review',
+    text: 'Products are considered with attention to reliability, consistency, documentation, and healthcare suitability.',
   },
   {
     icon: ClipboardList,
     title: 'Documentation Support',
-    text: 'Batch details, invoices, product information, and required supply documents are maintained for smoother buyer communication.',
+    text: 'Product information and relevant documentation are maintained for clearer healthcare and business communication.',
   },
   {
     icon: ShieldCheck,
     title: 'Storage & Handling',
-    text: 'Products are handled with care across storage, dispatch, and delivery coordination to support quality-focused supply.',
+    text: 'Products are handled with care to support quality-focused pharmaceutical standards.',
   },
   {
     icon: BadgeCheck,
-    title: 'Ethical Supply',
-    text: 'Cadell maintains transparent communication, responsible sourcing, and long-term trust with healthcare partners.',
+    title: 'Ethical Practice',
+    text: 'Cadell maintains transparent communication, responsible practices, and long-term trust with healthcare partners.',
   },
 ];
 
@@ -42,16 +42,16 @@ const certifications = [
   },
   {
     title: 'Quality Assured',
-    subtitle: 'Consistent supply assurance',
+    subtitle: 'Consistent quality focus',
     image: '/images/certificates/quality.png',
   },
 ];
 
 const qualityStats = [
-  { value: '100%', label: 'Documentation Verified' },
-  { value: '500+', label: 'Deliveries Managed' },
-  { value: '8+', label: 'Years Compliance Experience' },
-  { value: 'PAN India', label: 'Distribution Support' },
+  { value: 'Quality', label: 'Documentation Focus' },
+  { value: 'Care', label: 'Patient-Focused Approach' },
+  { value: 'Trust', label: 'Healthcare Relationships' },
+  { value: 'Integrity', label: 'Responsible Standards' },
 ];
 
 export default function Quality() {
@@ -84,10 +84,10 @@ export default function Quality() {
                 textShadow: '0 0 36px rgba(56, 189, 248, 0.28), 0 16px 60px rgba(7, 31, 59, 0.35)',
               }}
             >
-              Committed to Safe, Reliable & Responsible Pharma Supply
+              Committed To Quality Healthcare & Pharmaceutical Excellence.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-blue-50 md:text-lg">
-              Cadell Healthcare follows structured quality checks, documentation practices, and responsible sourcing standards to support pharmacies, hospitals, and healthcare distributors.
+              Cadell Healthcare follows structured quality practices, documentation standards, and responsible healthcare principles.
             </p>
           </div>
         </div>
@@ -125,12 +125,12 @@ export default function Quality() {
         `}</style>
       </section>
 
-      <section className="section-pad bg-white">
-        <div className="container-pad">
+      <section className="section-pad cinematic-light">
+        <div className="container-pad relative z-10">
           <SectionHeader
             eyebrow="Quality Framework"
-            title="Built for confidence across vendors, buyers, and healthcare channels."
-            text="Cadell combines reviewed sourcing practices, organized documentation, careful handling, and transparent communication across every buyer relationship."
+            title="Built for confidence across healthcare and pharmaceutical relationships."
+            text="Cadell combines organized documentation, careful handling, quality practices, and transparent communication across every relationship."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {checks.map((check) => {
@@ -138,7 +138,7 @@ export default function Quality() {
               return (
                 <article
                   key={check.title}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl sm:p-7"
+                  className="premium-card group relative overflow-hidden rounded-2xl border border-slate-100/70 bg-white/88 p-6 backdrop-blur-md transition-all duration-300 hover:border-blue-100 sm:p-7"
                 >
                   <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-500 to-cyan-400 opacity-0 transition duration-300 group-hover:opacity-100" />
                   <div className="relative z-10">
@@ -153,19 +153,19 @@ export default function Quality() {
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
-        <div className="container-pad">
+      <section className="cinematic-bluewash py-16 md:py-20">
+        <div className="container-pad relative z-10">
           <SectionHeader
             align="center"
             eyebrow="Quality By Numbers"
-            title="Measured discipline behind every supply relationship."
+            title="Measured discipline behind every healthcare relationship."
             text="Cadell Healthcare keeps compliance, documentation, and coordination at the center of its quality approach."
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {qualityStats.map((stat) => (
               <article
                 key={stat.label}
-                className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="premium-card rounded-2xl border border-slate-100/70 bg-white/88 p-6 text-center backdrop-blur-md transition-all duration-300"
               >
                 <strong className="block bg-gradient-to-r from-[#1E5AA8] to-[#38BDF8] bg-clip-text text-4xl font-bold text-transparent">
                   {stat.value}
@@ -179,8 +179,8 @@ export default function Quality() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16 md:py-20">
-        <div className="container-pad">
+      <section className="cinematic-light py-16 md:py-20">
+        <div className="container-pad relative z-10">
           <SectionHeader
             align="center"
             eyebrow="Accreditations"
@@ -191,10 +191,10 @@ export default function Quality() {
             {certifications.map((certification) => (
               <article
                 key={certification.title}
-                className="group relative overflow-hidden rounded-[24px] border border-slate-100 bg-white p-6 text-center shadow-xl shadow-blue-950/5 transition-all duration-500 hover:-translate-y-2 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-950/10 sm:p-7"
+                className="premium-card group relative overflow-hidden rounded-[24px] border border-slate-100/60 bg-white/90 p-6 text-center backdrop-blur-md transition-all duration-500 hover:border-blue-100 sm:p-7"
               >
                 <div className="absolute inset-0 rounded-[24px] bg-blue-400/5 opacity-0 transition duration-500 group-hover:opacity-100" />
-                <div className="relative mx-auto flex h-[170px] w-full items-center justify-center rounded-2xl border border-slate-100 bg-slate-50 p-5 transition duration-500 group-hover:border-blue-100">
+                <div className="relative mx-auto flex h-[170px] w-full items-center justify-center rounded-2xl border border-slate-100/60 bg-slate-50 p-5 transition duration-500 group-hover:border-blue-100/70">
                   <img
                     src={certification.image}
                     alt={certification.title}

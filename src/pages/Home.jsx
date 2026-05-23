@@ -1,35 +1,33 @@
-import { ArrowRight, ClipboardCheck, Cross, MapPin, MessageCircle, PackageCheck, ShieldCheck } from 'lucide-react';
+import { ArrowRight, ClipboardCheck, Cross, MessageCircle, PackageCheck, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import AnimatedCounter from '../components/AnimatedCounter.jsx';
 import CTASection from '../components/CTASection.jsx';
 import ProductGrid from '../components/ProductGrid.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
-import TrustBar from '../components/TrustBar.jsx';
 import { contact } from '../data/site.js';
 
 const workflow = [
   {
     icon: ClipboardCheck,
-    title: 'Requirement Mapping',
-    text: 'Product, quantity, geography, and supply expectations are captured clearly before commitments are made.',
+    title: 'Product Understanding',
+    text: 'Product needs and healthcare priorities are understood clearly before recommendations are made.',
   },
   {
     icon: ShieldCheck,
     title: 'Quality-First Selection',
-    text: 'Vendor and product decisions are guided by documentation, consistency, and practical market suitability.',
+    text: 'Product decisions are guided by quality standards, documentation, consistency, and patient-care relevance.',
   },
   {
     icon: PackageCheck,
-    title: 'Dependable Fulfillment',
-    text: 'Orders are coordinated with attention to availability, dispatch timelines, and communication discipline.',
+    title: 'Responsible Support',
+    text: 'Healthcare enquiries are handled with attention to clarity, responsiveness, and professional follow-through.',
   },
 ];
 
 const counters = [
-  { value: 500, suffix: '+', label: 'Pharmacies Served' },
-  { value: 100, suffix: '+', label: 'Healthcare Products' },
-  { value: 8, suffix: '+', label: 'Product Categories' },
-  { value: 0, suffix: '', label: 'Pan India Distribution', custom: 'Pan India' },
+  { value: 0, suffix: '', label: 'Pharmaceutical Solutions', custom: 'Quality' },
+  { value: 0, suffix: '', label: 'Healthcare Relationships', custom: 'Trusted' },
+  { value: 0, suffix: '', label: 'Patient-Focused Care', custom: 'Care' },
+  { value: 0, suffix: '', label: 'Professional Standards', custom: 'Integrity' },
 ];
 
 const pharmacyHeroSvg = `
@@ -327,7 +325,7 @@ const pharmacyHeroSvg = `
     <circle cx="29" cy="29" r="18" fill="#e6f7f2"/>
     <polyline points="21,29 27,35 37,23" stroke="#1b8a6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
     <text x="52" y="24" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#0d1f3c">WHO-GMP Certified</text>
-    <text x="52" y="38" font-family="Arial, sans-serif" font-size="10" fill="#607090">Quality Assured Supply</text>
+    <text x="52" y="38" font-family="Arial, sans-serif" font-size="10" fill="#607090">Quality Assured Care</text>
   </g>
   <g filter="url(#softShadow)" transform="translate(18, 440)">
     <rect width="134" height="80" rx="16" fill="#0d1f3c"/>
@@ -348,38 +346,60 @@ const pharmacyHeroSvg = `
 export default function Home() {
   return (
     <main className="page-shell">
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f4fbff] via-[#f7fbfd] to-white px-0 pt-24 md:px-4 md:pt-28">
-        <div
-          className="absolute inset-0 bg-cover md:hidden"
-          style={{
-            backgroundImage: "url('/mobile-pharma-bg.jpg')",
-            backgroundPosition: 'center right',
-            filter: 'contrast(1.08) saturate(1.08)',
-          }}
+      <section
+        className="relative min-h-[100svh] overflow-hidden px-0 pt-[88px] md:pt-24"
+        style={{
+          background: 'linear-gradient(135deg, #020817 0%, #031b34 40%, #04294d 100%)',
+        }}
+      >
+        <img
+          src="/hero-healthcare-bg.png"
+          alt=""
+          aria-hidden="true"
+          className="hero-bg-drift hero-image-reveal absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-82 md:object-[center_right]"
+          style={{ filter: 'brightness(1.08) contrast(1.08) saturate(1.04)' }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.88)_38%,rgba(255,255,255,0.68)_66%,rgba(255,255,255,0.3)_100%)] md:hidden" />
-        <div className="absolute inset-0 hidden soft-grid opacity-60 md:block" />
-        <div className="absolute left-0 top-24 hidden h-72 w-72 rounded-full bg-sky-200/30 blur-3xl md:block" />
-        <div className="absolute right-0 top-40 hidden h-96 w-96 rounded-full bg-blue-200/40 blur-3xl md:block" />
-        <div className="relative z-10 block overflow-hidden md:hidden">
-          <div className="relative z-10 px-6 pb-12 pt-10">
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/70 px-4 py-2">
-              <span className="text-xs font-semibold tracking-wider text-blue-700">
-                PHARMA DISTRIBUTION & HEALTHCARE SOLUTIONS
-              </span>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,12,27,0.95)_0%,rgba(2,12,27,0.9)_40%,rgba(2,12,27,0.48)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(2,8,23,0)_38%,rgba(0,0,0,0.38)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_34%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_82%_62%,rgba(59,130,246,0.12),transparent_34%),linear-gradient(180deg,rgba(4,41,77,0.18)_0%,rgba(2,8,23,0.32)_100%)]" />
+        <div className="pointer-events-none absolute right-[-10%] top-[16%] h-[42rem] w-[42rem] rounded-full bg-cyan-300/10 blur-[110px]" />
+        <div className="pointer-events-none absolute right-[14%] top-[34%] h-72 w-72 rounded-full bg-blue-400/12 blur-[70px]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_42%,rgba(0,0,0,0.42)_100%)]" />
+        <div className="hero-capsule-spotlight absolute right-[6%] top-[18%] h-[34rem] w-[34rem] rounded-full" />
+        <div className="hero-glow-pulse absolute right-[9%] top-[24%] h-96 w-96 rounded-full bg-cyan-300/14" />
+        <span className="hero-capsule-glint right-[18%] top-[36%]" />
+        <span className="hero-capsule-glint right-[13%] top-[43%] [animation-delay:2.4s]" />
+        <span className="hero-capsule-glint right-[25%] top-[50%] [animation-delay:4.1s]" />
+        <span className="hero-premium-particle left-[14%] top-[38%]" />
+        <span className="hero-premium-particle right-[18%] top-[28%] [animation-delay:1.8s]" />
+        <span className="hero-premium-particle bottom-[18%] right-[36%] [animation-delay:3.2s]" />
+        <span className="hero-premium-particle right-[9%] bottom-[30%] [animation-delay:4.4s]" />
+        <span className="hero-premium-particle left-[46%] top-[22%] [animation-delay:5.6s]" />
+
+        <div className="relative z-10 mx-auto max-w-[1320px] px-6 pb-16 pt-10 sm:px-8 md:pb-24 md:pt-10 lg:px-10">
+          <div className="hero-text-fade max-w-2xl">
+            <div className="mb-8 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-200/10 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-100 shadow-[0_10px_40px_rgba(0,0,0,0.16)] backdrop-blur-md sm:text-xs sm:tracking-[0.24em]">
+              <Cross className="h-4 w-4" />
+              <span className="min-w-0">Pharmaceutical & Healthcare Solutions</span>
             </div>
-            <h1 className="mb-7 max-w-[11ch] text-[42px] font-bold leading-[1.08] text-[#0B2A4A]">
-              Enterprise-grade healthcare supply for modern pharma trade.
+            <h1 className="max-w-[11ch] text-[44px] font-bold leading-[0.96] tracking-normal text-white drop-shadow-[0_14px_38px_rgba(0,0,0,0.42)] sm:text-6xl md:text-[72px]">
+              Trusted
+              <br />
+              Pharmaceutical
+              <br />
+              Innovation
+              <br />
+              For Modern
+              <br />
+              Healthcare.
             </h1>
-            <p className="mb-9 text-lg leading-9 text-slate-700">
-              Cadell Healthcare supports pharmacies, hospitals, distributors,
-              and healthcare buyers with quality-led product access,
-              dependable coordination, and partnership-first distribution.
+            <p className="mt-9 max-w-xl text-base leading-8 text-blue-50/90 drop-shadow-[0_8px_24px_rgba(0,0,0,0.28)] md:text-lg">
+              Cadell Healthcare is committed to advancing healthcare through quality pharmaceutical solutions, trusted standards, and patient-focused care.
             </p>
-            <div className="mb-9 flex flex-col gap-4">
+            <div className="mt-9 flex flex-col gap-5 sm:flex-row">
               <Link
                 to="/products"
-                className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-700 to-cyan-500 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-cyan-100/10 bg-gradient-to-r from-[#082A58] via-[#0E4D86] to-[#1197B2] px-9 py-4 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_45px_rgba(8,42,88,0.34)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:brightness-110 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_22px_60px_rgba(34,211,238,0.22)] sm:w-auto"
               >
                 View Portfolio
                 <ArrowRight size={18} />
@@ -388,137 +408,62 @@ export default function Home() {
                 href={contact.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-14 w-full items-center justify-center gap-2 rounded-full border border-blue-700 bg-blue-50 px-8 py-4 font-semibold text-blue-900 transition-all duration-300 hover:scale-105 hover:bg-blue-700 hover:text-white hover:shadow-lg"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-white px-9 py-4 text-sm font-bold text-[#06213F] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_14px_36px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-cyan-100 hover:text-[#06213F] hover:shadow-[0_0_30px_rgba(34,211,238,0.35)] sm:w-auto"
               >
                 <MessageCircle size={18} />
                 Send Enquiry
               </a>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              {counters.map((counter) =>
-                counter.custom ? (
-                  <div key={counter.label} className="rounded-2xl border border-white/70 bg-white/85 p-4 shadow-lg shadow-blue-950/5">
-                    <strong className="flex items-center gap-2 text-xl font-semibold text-[#0B2A4A]">
-                      <MapPin className="h-5 w-5 text-[#1E5AA8]" />
-                      {counter.custom}
-                    </strong>
-                    <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.12em] text-slate-500">
-                      {counter.label}
-                    </span>
-                  </div>
-                ) : (
-                  <AnimatedCounter key={counter.label} {...counter} />
-                ),
-              )}
+            <div className="mt-10 flex max-w-xl flex-wrap gap-3">
+              {counters.slice(0, 2).map((counter) => (
+                <div
+                  key={counter.label}
+                  className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-4 py-2 text-sm text-blue-50/80 shadow-[0_10px_40px_rgba(0,0,0,0.14)] backdrop-blur-md transition-all duration-300 hover:bg-white/10"
+                >
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-200/80 shadow-[0_0_12px_rgba(125,211,252,0.45)]" />
+                  <strong className="font-semibold text-white">{counter.custom}</strong>
+                  <span className="hidden text-xs font-semibold uppercase tracking-[0.12em] text-blue-100/55 sm:inline">
+                    {counter.label}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-        <div
-          className="relative z-10 mx-auto hidden max-w-[1320px] overflow-hidden rounded-[2rem] border border-white/80 bg-white/55 bg-cover bg-center px-4 pb-6 pt-7 shadow-2xl shadow-blue-950/8 backdrop-blur sm:px-5 md:block md:rounded-[2.5rem] md:bg-none md:px-8 md:pb-8 lg:px-10"
-        >
-          <div className="relative z-10 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
-          <div className="max-w-2xl">
-            <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#1E5AA8] shadow-sm sm:text-xs sm:tracking-[0.24em]">
-              <Cross className="h-4 w-4" />
-              <span className="min-w-0">Pharma Distribution & Healthcare Solutions</span>
+        <div className="absolute inset-x-0 bottom-0 z-10 h-14 overflow-hidden border-t border-white/10 bg-[#071A33]/70 backdrop-blur-md">
+          <div className="group/hero-marquee flex h-full items-center overflow-hidden">
+            <div className="flex w-max items-center motion-safe:animate-[trust-marquee_36s_linear_infinite] group-hover/hero-marquee:[animation-play-state:paused]">
+              {[
+                'WHO-GMP CERTIFIED',
+                'PATIENT-FOCUSED CARE',
+                'QUALITY HEALTHCARE',
+                'TRUSTED FORMULATIONS',
+                'ETHICAL STANDARDS',
+                'MODERN PHARMACEUTICAL SOLUTIONS',
+                'WHO-GMP CERTIFIED',
+                'PATIENT-FOCUSED CARE',
+                'QUALITY HEALTHCARE',
+                'TRUSTED FORMULATIONS',
+                'ETHICAL STANDARDS',
+                'MODERN PHARMACEUTICAL SOLUTIONS',
+              ].map((item, index) => (
+                <div key={`${item}-${index}`} className="flex items-center">
+                  <span className="px-6 text-[11px] font-bold uppercase tracking-[0.24em] text-white/75 sm:px-8">
+                    {item}
+                  </span>
+                  <span className="h-1 w-1 rounded-full bg-cyan-200/60 shadow-[0_0_10px_rgba(125,211,252,0.42)]" />
+                </div>
+              ))}
             </div>
-            <h1 className="text-4xl font-bold leading-[1.05] text-[#0B2A4A] sm:text-5xl md:text-6xl xl:text-7xl">
-              Enterprise-grade healthcare supply for modern pharma trade.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 md:text-lg">
-              Cadell Healthcare supports pharmacies, hospitals, distributors, and healthcare buyers with
-              quality-led product access, dependable coordination, and partnership-first distribution.
-            </p>
-            <div className="mt-7 flex flex-col gap-4 sm:flex-row md:mt-8">
-              <Link
-                to="/products"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-700 to-cyan-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-blue-700/20 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-700/25 sm:w-auto"
-              >
-                View Portfolio
-                <ArrowRight size={18} />
-              </Link>
-              <a
-                href={contact.whatsapp}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-blue-700 bg-blue-50 px-8 py-4 text-sm font-bold text-blue-900 transition-all duration-300 hover:scale-105 hover:bg-blue-700 hover:text-white hover:shadow-lg sm:w-auto"
-              >
-                <MessageCircle size={18} />
-                Send Enquiry
-              </a>
-            </div>
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
-              {counters.map((counter) =>
-                counter.custom ? (
-                  <div key={counter.label} className="rounded-2xl border border-white/70 bg-white p-4 shadow-lg shadow-blue-950/5 sm:p-5">
-                    <strong className="flex items-center gap-2 text-2xl font-semibold text-[#0B2A4A] md:text-3xl">
-                      <MapPin className="h-6 w-6 text-[#1E5AA8]" />
-                      {counter.custom}
-                    </strong>
-                    <span className="mt-1 block text-xs font-bold uppercase tracking-[0.16em] text-slate-500">
-                      {counter.label}
-                    </span>
-                  </div>
-                ) : (
-                  <AnimatedCounter key={counter.label} {...counter} />
-                ),
-              )}
-            </div>
-          </div>
-          <div className="relative mt-6 hidden min-h-[220px] sm:min-h-[380px] md:block lg:mt-0 lg:min-h-full">
-            <div
-              className="hero-float relative h-full min-h-[220px] overflow-hidden rounded-[22px] shadow-2xl shadow-blue-950/12 sm:min-h-[380px] sm:rounded-[24px] lg:min-h-full"
-              style={{ background: 'linear-gradient(145deg, #e8f4f0 0%, #ddeef8 50%, #e4f0f8 100%)' }}
-            >
-              <img
-                src="/images/hero/hero-pharma-bg.jpg"
-                alt="Cadell Healthcare pharmaceutical supply"
-                className="absolute inset-0 hidden h-full w-full rounded-[24px] object-cover object-center contrast-[1.05] saturate-[1.05] md:block"
-              />
-              <div className="absolute inset-0 rounded-[24px] bg-[linear-gradient(135deg,#EAF4FF_0%,#DCEBFA_45%,#F5F8FC_100%)] md:hidden" />
-              <svg
-                className="absolute inset-0 h-full w-full opacity-35 md:hidden"
-                viewBox="0 0 420 220"
-                fill="none"
-                aria-hidden="true"
-              >
-                <path d="M28 52H392M28 112H392M28 172H392M74 20V200M158 20V200M242 20V200M326 20V200" stroke="#1E5AA8" strokeWidth="1" strokeOpacity="0.22" />
-                <path d="M72 128L132 90L196 122L258 78L334 116" stroke="#38BDF8" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                {[72, 132, 196, 258, 334].map((cx, index) => (
-                  <circle
-                    key={cx}
-                    cx={cx}
-                    cy={[128, 90, 122, 78, 116][index]}
-                    r="13"
-                    fill="white"
-                    stroke="#1E5AA8"
-                    strokeWidth="3"
-                  />
-                ))}
-                <circle cx="336" cy="58" r="42" fill="#38BDF8" fillOpacity="0.18" />
-                <circle cx="92" cy="178" r="54" fill="#1E5AA8" fillOpacity="0.1" />
-                <path d="M318 162H374M346 134V190" stroke="#0B2A4A" strokeWidth="5" strokeLinecap="round" strokeOpacity="0.22" />
-              </svg>
-              <div className="absolute right-3 top-3 rounded-full border border-white/45 bg-white/90 px-3 py-1.5 text-xs font-bold text-[#0B2A4A] shadow-xl shadow-blue-950/15 backdrop-blur sm:right-5 sm:top-5 sm:px-4 sm:py-2 sm:text-sm">
-                100+ Products
-              </div>
-              <div className="absolute bottom-5 left-5 hidden rounded-full border border-white/45 bg-[#0B2A4A]/85 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-white shadow-xl shadow-blue-950/15 backdrop-blur sm:block">
-                Trusted Healthcare Supply
-              </div>
-            </div>
-          </div>
-          </div>
-          <div className="mt-6 md:mt-4">
-            <TrustBar />
           </div>
         </div>
       </section>
 
-      <section className="bg-white pb-10 pt-12 md:pb-14 md:pt-16">
-        <div className="container-pad">
+      <section className="cinematic-light pb-10 pt-12 md:pb-14 md:pt-16">
+        <div className="container-pad relative z-10">
           <SectionHeader
             eyebrow="Product Portfolio"
-            title="Pharmaceutical categories presented with enterprise clarity."
+            title="Therapeutic Healthcare Solutions Designed For Better Patient Care."
             text="Cadell Healthcare works across tablets, capsules, syrups, injections, nutraceuticals, diabetic care, cardiac care, and general healthcare products."
           />
           <div className="mt-12">
@@ -527,12 +472,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-pad bg-slate-50">
-        <div className="container-pad grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <section className="section-pad cinematic-bluewash">
+        <div className="container-pad relative z-10 grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <SectionHeader
             eyebrow="Operating Model"
-            title="Corporate supply discipline from enquiry to dispatch."
-            text="Every interaction is designed around clear requirements, responsible sourcing, realistic availability commitments, and professional follow-through."
+            title="Healthcare engagement guided by quality, clarity, and care."
+            text="Every interaction is designed around clear product understanding, responsible communication, quality standards, and professional follow-through."
           />
           <div className="space-y-6">
             {workflow.map((item) => {
@@ -540,7 +485,7 @@ export default function Home() {
               return (
                 <article
                   key={item.title}
-                  className="group relative cursor-pointer overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                  className="premium-card group relative cursor-pointer overflow-hidden rounded-3xl border border-slate-100/70 bg-white/88 p-6 backdrop-blur-md transition-all duration-500"
                 >
                   <div className="absolute left-0 top-0 h-full w-1 origin-top scale-y-0 bg-blue-600 transition-transform duration-500 group-hover:scale-y-100" />
                   <div className="flex items-start gap-5">

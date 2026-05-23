@@ -190,7 +190,7 @@ function ProductCardContent({ category }) {
   return (
     <>
       <div className="relative min-h-52 overflow-hidden p-4 sm:min-h-60 sm:p-5" style={{ background: visual.background }}>
-        <div className="absolute inset-x-5 bottom-5 top-5 flex items-center justify-center overflow-hidden rounded-[1.6rem] border border-white/75 bg-white/40 shadow-inner backdrop-blur-sm">
+        <div className="absolute inset-x-5 bottom-5 top-5 flex items-center justify-center overflow-hidden rounded-[1.6rem] border border-white/35 bg-white/40 shadow-inner backdrop-blur-sm">
           <MedicalPattern type={visual.pattern} />
         </div>
         <div className="absolute inset-x-10 bottom-8 h-10 rounded-full bg-[#0B2A4A]/10 blur-2xl" />
@@ -231,11 +231,11 @@ export default function ProductGrid({ onCategoryClick }) {
             type="button"
             key={category.name}
             onClick={() => handleCategoryClick(category)}
-            className="card-lift group overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white text-left shadow-sm outline-none transition focus-visible:ring-4 focus-visible:ring-sky-100 hover:border-sky-200"
+            className="premium-card group overflow-hidden rounded-[1.75rem] border border-slate-100/70 bg-white/92 text-left outline-none backdrop-blur-sm transition focus-visible:ring-4 focus-visible:ring-sky-100 hover:border-sky-100"
             style={
               isOrthopedic
                 ? {
-                    border: '1.5px solid #5DCAA5',
+                    border: '1px solid rgba(93, 202, 165, 0.35)',
                     background: 'linear-gradient(160deg, #e1f5ee 0%, #f0faf6 100%)',
                   }
                 : undefined

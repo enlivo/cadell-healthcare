@@ -1,7 +1,6 @@
 import { ArrowRight, ChevronLeft, ChevronRight, Send, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { productCatalog } from '../data/productCatalog.generated.js';
-import { contact } from '../data/site.js';
 
 const categoryFilters = [
   { slug: 'all', label: 'All' },
@@ -13,7 +12,7 @@ const categoryFilters = [
 ];
 
 const categoryProductCopy = {
-  cardiac: 'Supports cardiovascular care with quality-focused formulation for pharmacy and institutional supply.',
+  cardiac: 'Supports cardiovascular care with quality-focused formulation for healthcare needs.',
   diabetic: 'Supports blood sugar management and metabolic wellness for diabetic care needs.',
   'general-medicine': 'Supports everyday clinical care, recovery, and symptom management needs.',
   gynaecology: 'Supports women’s health, hormonal wellness, and reproductive care needs.',
@@ -130,6 +129,17 @@ const getProductDescription = (product, category) => {
   return productCopyByCategory[category.slug]?.[product.name] ?? categoryProductCopy[category.slug];
 };
 
+const getProductWhatsAppUrl = (productName) => {
+  const message = `Hello Cadell Healthcare,
+I would like to enquire about this pharmaceutical product.
+
+Product: ${productName}
+
+Please share availability and details.`;
+
+  return `https://wa.me/919060644409?text=${encodeURIComponent(message)}`;
+};
+
 const buildCatalog = () =>
   categoryFilters
     .filter((category) => category.slug !== 'all')
@@ -172,10 +182,6 @@ export default function Products() {
     setActiveProductIndex((index) => (index === null ? null : (index + 1) % filteredProducts.length));
   };
 
-  const enquireProduct = () => {
-    window.open(contact.whatsapp, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <main className="page-shell">
       <section className="relative overflow-hidden bg-[#0B2A4A] pt-36 text-white">
@@ -186,7 +192,7 @@ export default function Products() {
           </p>
           <h1 className="text-4xl font-semibold leading-tight sm:text-5xl md:text-7xl">Our Products</h1>
           <div className="mt-6 flex flex-wrap gap-3">
-            {['83+ Products', 'Pan India Distribution', '500+ Pharmacies Served'].map((metric) => (
+            {['Quality Products', 'Healthcare Solutions', 'Patient-Focused Care'].map((metric) => (
               <span
                 key={metric}
                 className="inline-flex items-center rounded-full border border-blue-300/20 bg-blue-800/30 px-4 py-2 text-xs font-bold tracking-[0.14em] text-sky-100 shadow-lg shadow-blue-950/10 sm:px-5 sm:py-2.5 sm:text-sm"
@@ -196,13 +202,13 @@ export default function Products() {
             ))}
           </div>
           <p className="mt-6 max-w-3xl text-base leading-8 text-blue-50 md:text-lg">
-            A trusted portfolio of healthcare products for pharmacies, hospitals, and distributors.
+            A trusted portfolio of healthcare products focused on quality pharmaceutical solutions and patient care.
           </p>
         </div>
       </section>
 
-      <section className="bg-white py-8">
-        <div className="container-pad flex flex-wrap gap-3">
+      <section className="cinematic-light py-8">
+        <div className="container-pad relative z-10 flex flex-wrap gap-3">
           {categoryFilters.map((category) => {
             const isActive = activeCategory === category.slug;
             const count =
@@ -230,8 +236,8 @@ export default function Products() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16 md:py-20">
-        <div className="container-pad">
+      <section className="cinematic-bluewash py-16 md:py-20">
+        <div className="container-pad relative z-10">
           <div className="mb-10 flex items-end justify-between gap-5">
             <div>
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#1E5AA8] sm:tracking-[0.28em]">
@@ -252,7 +258,7 @@ export default function Products() {
             {filteredProducts.map((product, index) => (
               <article
                 key={`${product.categorySlug}-${product.name}`}
-                className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-sky-200 hover:shadow-xl hover:shadow-blue-900/8"
+                className="premium-card group flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-100/70 bg-white/92 backdrop-blur-sm transition-all duration-500 hover:border-sky-100"
               >
                 <button
                   type="button"
@@ -286,15 +292,16 @@ export default function Products() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">
                     {product.description}
                   </p>
-                  <button
-                    type="button"
-                    onClick={enquireProduct}
-                    className="group mt-6 inline-flex w-full translate-y-1 items-center justify-center gap-2 rounded-xl bg-[#0F9D76] px-5 py-3 font-bold text-white opacity-95 shadow-lg shadow-emerald-800/15 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:-translate-y-0 hover:bg-[#0b8766] group-hover:translate-y-0 group-hover:opacity-100"
+                  <a
+                    href={getProductWhatsAppUrl(product.name)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group mt-6 inline-flex w-full translate-y-1 items-center justify-center gap-2 rounded-xl bg-[#0F9D76] px-5 py-3 font-bold text-white opacity-95 shadow-lg shadow-emerald-800/15 transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0 hover:bg-[#0b8766] hover:shadow-xl hover:shadow-emerald-500/25 group-hover:translate-y-0 group-hover:opacity-100"
                   >
                     <Send className="h-5 w-5" />
                     Request Availability
                     <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </button>
+                  </a>
                 </div>
               </article>
             ))}
