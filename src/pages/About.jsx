@@ -77,6 +77,39 @@ export default function About() {
         </div>
       </section>
 
+      <section className="relative overflow-hidden bg-[#071d3a] py-20 text-white md:py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_20%,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_18%_80%,rgba(59,130,246,0.16),transparent_34%),linear-gradient(135deg,rgba(7,29,58,1),rgba(2,12,27,0.92))]" />
+        <div className="absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle_at_center,white_1px,transparent_1px)] [background-size:22px_22px]" />
+        <div className="absolute right-10 top-10 h-72 w-72 rounded-full bg-cyan-300/18 blur-3xl" />
+        <div className="absolute bottom-0 left-10 h-80 w-80 rounded-full bg-blue-400/18 blur-3xl" />
+        <div className="container-pad relative z-10">
+          <div className="grid gap-8 md:grid-cols-2">
+            {principles.map((principle) => (
+              <article
+                key={principle.eyebrow}
+                className="scroll-fade group relative overflow-hidden rounded-[2.25rem] bg-white/8 p-7 shadow-2xl shadow-blue-950/25 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(34,211,238,0.12)] sm:p-9"
+              >
+                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan-300/10 blur-2xl transition duration-500 group-hover:bg-cyan-300/16" />
+                <span className="absolute right-7 top-5 text-7xl font-bold leading-none text-white/[0.04]">
+                  {principle.mark}
+                </span>
+                <div className="relative z-10">
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-200">
+                    {principle.eyebrow}
+                  </p>
+                  <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
+                    {principle.title}
+                  </h2>
+                  <p className="mt-5 text-base leading-8 text-blue-50/85 md:text-lg">
+                    {principle.text}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-[linear-gradient(135deg,#F8FCFF_0%,#EEF7FF_44%,#FFFFFF_100%)] py-20 md:py-28">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_10%_78%,rgba(30,90,168,0.12),transparent_32%)]" />
         <div className="absolute right-[-12%] top-10 h-96 w-96 rounded-full bg-cyan-200/30 blur-3xl" />
@@ -157,39 +190,6 @@ export default function About() {
                 </article>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden bg-[#071d3a] py-20 text-white md:py-28">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_74%_20%,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_18%_80%,rgba(59,130,246,0.16),transparent_34%),linear-gradient(135deg,rgba(7,29,58,1),rgba(2,12,27,0.92))]" />
-        <div className="absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle_at_center,white_1px,transparent_1px)] [background-size:22px_22px]" />
-        <div className="absolute right-10 top-10 h-72 w-72 rounded-full bg-cyan-300/18 blur-3xl" />
-        <div className="absolute bottom-0 left-10 h-80 w-80 rounded-full bg-blue-400/18 blur-3xl" />
-        <div className="container-pad relative z-10">
-          <div className="grid gap-8 md:grid-cols-2">
-            {principles.map((principle) => (
-              <article
-                key={principle.eyebrow}
-                className="scroll-fade group relative overflow-hidden rounded-[2.25rem] bg-white/8 p-7 shadow-2xl shadow-blue-950/25 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(34,211,238,0.12)] sm:p-9"
-              >
-                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-cyan-300/10 blur-2xl transition duration-500 group-hover:bg-cyan-300/16" />
-                <span className="absolute right-7 top-5 text-7xl font-bold leading-none text-white/[0.04]">
-                  {principle.mark}
-                </span>
-                <div className="relative z-10">
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-200">
-                    {principle.eyebrow}
-                  </p>
-                  <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
-                    {principle.title}
-                  </h2>
-                  <p className="mt-5 text-base leading-8 text-blue-50/85 md:text-lg">
-                    {principle.text}
-                  </p>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>

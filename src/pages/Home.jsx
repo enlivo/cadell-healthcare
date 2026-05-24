@@ -464,7 +464,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="Product Portfolio"
             title="Therapeutic Healthcare Solutions Designed For Better Patient Care."
-            text="Cadell Healthcare works across tablets, capsules, syrups, injections, nutraceuticals, diabetic care, cardiac care, and general healthcare products."
+            text="Cadell Healthcare works across tablets, capsules, syrups, nutraceuticals, diabetic care, cardiac care, and general healthcare products."
           />
           <div className="mt-12">
             <ProductGrid />
