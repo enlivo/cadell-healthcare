@@ -1,8 +1,20 @@
-import { ArrowRight, ClipboardCheck, Cross, MessageCircle, PackageCheck, ShieldCheck } from 'lucide-react';
+import {
+  ArrowRight,
+  BadgeCheck,
+  Boxes,
+  ClipboardCheck,
+  Cross,
+  HeartPulse,
+  MessageCircle,
+  PackageCheck,
+  ShieldCheck,
+  Truck,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection.jsx';
 import ProductGrid from '../components/ProductGrid.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
+import { productCatalog } from '../data/productCatalog.generated.js';
 import { contact } from '../data/site.js';
 
 const workflow = [
@@ -23,12 +35,88 @@ const workflow = [
   },
 ];
 
-const counters = [
-  { value: 0, suffix: '', label: 'Pharmaceutical Solutions', custom: 'Quality' },
-  { value: 0, suffix: '', label: 'Healthcare Relationships', custom: 'Trusted' },
-  { value: 0, suffix: '', label: 'Patient-Focused Care', custom: 'Care' },
-  { value: 0, suffix: '', label: 'Professional Standards', custom: 'Integrity' },
+const trustPillars = [
+  {
+    icon: BadgeCheck,
+    title: 'WHO-GMP Manufactured',
+    text: 'Formulated exclusively at certified, state-of-the-art facilities.',
+  },
+  {
+    icon: HeartPulse,
+    title: 'Patient-Centric Focus',
+    text: 'Meticulously designed for maximum therapeutic efficacy and safety.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Ethical Marketing',
+    text: 'Built on clinical data, transparency, and scientific trust.',
+  },
+  {
+    icon: Truck,
+    title: 'Pan-India Distribution',
+    text: 'Robust supply chain delivering medicines safely and on time.',
+  },
 ];
+
+const qualityCommitments = [
+  {
+    icon: ShieldCheck,
+    title: 'Certified Operations',
+    text: 'We partner strictly with plants holding valid WHO-GMP, ISO, and state drug authority approvals.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Stability Studies',
+    text: 'All formulations undergo real-time and accelerated stability testing to ensure maximum shelf-life.',
+  },
+  {
+    icon: Boxes,
+    title: 'Advanced Packaging',
+    text: 'Utilizing premium Alu-Alu and moisture-resistant blister packing to maintain chemical integrity.',
+  },
+];
+
+const franchiseCards = [
+  {
+    title: 'Exclusive Monopoly Rights',
+    text: 'Dedicated, conflict-free geographic territories for your business.',
+    image: '/images/franchise/monopoly-rights.webp',
+    alt: 'India distribution territory visual representing exclusive monopoly rights',
+    position: 'center',
+  },
+  {
+    title: 'Extensive Product Portfolio',
+    text: 'Wide range of quality formulations across major therapeutic segments.',
+    image: '/images/franchise/product-portfolio.webp',
+    alt: 'Cadell Healthcare product portfolio visual with pharmaceutical formulations',
+    position: 'center',
+  },
+  {
+    title: 'Marketing & Promotional Support',
+    text: 'Visual aids, product glossaries, catching cards, physician samples and promotional materials.',
+    image: '/images/franchise/marketing-support.webp',
+    alt: 'Medical representative kit representing marketing and promotional support',
+    position: 'center',
+  },
+  {
+    title: 'Seamless Logistics',
+    text: 'Constant stock availability with rapid order fulfillment to prevent market deficits.',
+    image: '/images/franchise/logistics.webp',
+    alt: 'Warehouse logistics visual representing pharma supply chain and dispatch',
+    position: 'center',
+  },
+];
+
+const franchiseWhatsapp = `${contact.whatsapp.split('?')[0]}?text=Hello%20Cadell%20Healthcare%2C%20I%20would%20like%20to%20enquire%20about%20Franchise%20%2F%20Distribution%20opportunities.`;
+
+const productMarqueeItems = Object.values(productCatalog).reduce((items, category, categoryIndex, categories) => {
+  category.products.forEach((product, productIndex) => {
+    const insertionIndex = productIndex * categories.length + categoryIndex;
+    items[insertionIndex] = product.name;
+  });
+
+  return items;
+}, []).filter(Boolean);
 
 const pharmacyHeroSvg = `
 <svg viewBox="0 0 640 720" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
@@ -383,70 +471,39 @@ export default function Home() {
               <span className="min-w-0">Pharmaceutical & Healthcare Solutions</span>
             </div>
             <h1 className="max-w-[11ch] text-[44px] font-bold leading-[0.96] tracking-normal text-white drop-shadow-[0_14px_38px_rgba(0,0,0,0.42)] sm:text-6xl md:text-[72px]">
-              Trusted
-              <br />
-              Pharmaceutical
-              <br />
-              Innovation
-              <br />
-              For Modern
+              Advancing
               <br />
               Healthcare.
+              <br />
+              Empowering
+              <br />
+              Lives.
             </h1>
             <p className="mt-9 max-w-xl text-base leading-8 text-blue-50/90 drop-shadow-[0_8px_24px_rgba(0,0,0,0.28)] md:text-lg">
-              Cadell Healthcare is committed to advancing healthcare through quality pharmaceutical solutions, trusted standards, and patient-focused care.
+              At Cadell Healthcare, we blend scientific integrity with marketing excellence to deliver premium, therapeutic formulations manufactured at world-class, WHO-GMP certified facilities.
             </p>
             <div className="mt-9 flex flex-col gap-5 sm:flex-row">
               <Link
                 to="/products"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-cyan-100/10 bg-gradient-to-r from-[#082A58] via-[#0E4D86] to-[#1197B2] px-9 py-4 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_45px_rgba(8,42,88,0.34)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:brightness-110 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_22px_60px_rgba(34,211,238,0.22)] sm:w-auto"
               >
-                View Portfolio
+                Explore Our Brand Portfolio
                 <ArrowRight size={18} />
               </Link>
-              <a
-                href={contact.whatsapp}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                to="/contact"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-white px-9 py-4 text-sm font-bold text-[#06213F] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_14px_36px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-cyan-100 hover:text-[#06213F] hover:shadow-[0_0_30px_rgba(34,211,238,0.35)] sm:w-auto"
               >
                 <MessageCircle size={18} />
-                Send Enquiry
-              </a>
-            </div>
-            <div className="mt-10 flex max-w-xl flex-wrap gap-3">
-              {counters.slice(0, 2).map((counter) => (
-                <div
-                  key={counter.label}
-                  className="inline-flex items-center gap-2 rounded-full bg-white/[0.06] px-4 py-2 text-sm text-blue-50/80 shadow-[0_10px_40px_rgba(0,0,0,0.14)] backdrop-blur-md transition-all duration-300 hover:bg-white/10"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-200/80 shadow-[0_0_12px_rgba(125,211,252,0.45)]" />
-                  <strong className="font-semibold text-white">{counter.custom}</strong>
-                  <span className="hidden text-xs font-semibold uppercase tracking-[0.12em] text-blue-100/55 sm:inline">
-                    {counter.label}
-                  </span>
-                </div>
-              ))}
+                Partner With Us
+              </Link>
             </div>
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 z-10 h-14 overflow-hidden border-t border-white/10 bg-[#071A33]/70 backdrop-blur-md">
           <div className="group/hero-marquee flex h-full items-center overflow-hidden">
-            <div className="flex w-max items-center motion-safe:animate-[trust-marquee_36s_linear_infinite] group-hover/hero-marquee:[animation-play-state:paused]">
-              {[
-                'WHO-GMP CERTIFIED',
-                'PATIENT-FOCUSED CARE',
-                'QUALITY HEALTHCARE',
-                'TRUSTED FORMULATIONS',
-                'ETHICAL STANDARDS',
-                'MODERN PHARMACEUTICAL SOLUTIONS',
-                'WHO-GMP CERTIFIED',
-                'PATIENT-FOCUSED CARE',
-                'QUALITY HEALTHCARE',
-                'TRUSTED FORMULATIONS',
-                'ETHICAL STANDARDS',
-                'MODERN PHARMACEUTICAL SOLUTIONS',
-              ].map((item, index) => (
+            <div className="flex w-max items-center motion-safe:animate-[trust-marquee_110s_linear_infinite] group-hover/hero-marquee:[animation-play-state:paused]">
+              {[...productMarqueeItems, ...productMarqueeItems].map((item, index) => (
                 <div key={`${item}-${index}`} className="flex items-center">
                   <span className="px-6 text-[11px] font-bold uppercase tracking-[0.24em] text-white/75 sm:px-8">
                     {item}
@@ -459,15 +516,217 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="cinematic-light py-9 md:py-10" aria-label="Core healthcare pillars">
+        <div className="relative z-10 mx-auto w-[min(1240px,calc(100%-32px))]">
+          <div className="mb-8 max-w-3xl">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#1E5AA8] sm:tracking-[0.28em]">
+              Cadell Credentials
+            </p>
+            <h2 className="text-3xl font-semibold leading-tight tracking-normal text-[#0B2A4A] md:text-4xl">
+              Why Healthcare Professionals Trust Cadell
+            </h2>
+            <p className="mt-4 text-base font-light leading-8 text-slate-600 md:text-lg">
+              Built on quality, compliance, scientific integrity, and reliable healthcare partnerships.
+            </p>
+          </div>
+          <div className="grid items-stretch gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {trustPillars.map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <article
+                  key={item.title}
+                  className="group relative flex h-full min-h-[150px] overflow-hidden rounded-3xl border border-slate-100/80 bg-white p-4 shadow-[0_16px_48px_rgba(15,47,95,0.09)] transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-100 hover:shadow-[0_26px_70px_rgba(15,47,95,0.16)] md:p-5"
+                >
+                  <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-[#0B2A4A] via-[#1E5AA8] to-cyan-400" />
+                  <div className="flex items-start gap-3.5">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-blue-50 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] transition-all duration-300 group-hover:bg-blue-100">
+                      <Icon className="h-5 w-5 text-blue-700 transition-all duration-300 group-hover:scale-110" />
+                    </span>
+                    <div className="pt-0.5">
+                      <h3 className="text-[17px] font-semibold leading-snug text-[#0B2A4A]">{item.title}</h3>
+                      <p className="mt-2 text-sm font-light leading-6 text-slate-600">{item.text}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="about-cadell" className="relative overflow-hidden bg-[linear-gradient(180deg,#F8FBFF_0%,#EEF5FB_50%,#F8FBFF_100%)] py-14 md:py-16 lg:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_44%,rgba(30,90,168,0.12),transparent_34%),radial-gradient(circle_at_68%_58%,rgba(215,182,93,0.1),transparent_28%)]" />
+        <div className="container-pad relative z-10 grid gap-7 lg:grid-cols-[0.45fr_0.55fr] lg:items-center lg:gap-8">
+          <div className="scroll-fade max-w-[620px]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#1E5AA8] sm:tracking-[0.3em]">
+              ABOUT CADELL HEALTHCARE
+            </p>
+            <h2 className="text-3xl font-semibold leading-[1.04] tracking-normal text-[#0B2A4A] sm:text-4xl md:text-[56px]">
+              The Cadell Promise: Quality, Integrity, Innovation.
+            </h2>
+            <div className="relative mt-7 h-[360px] w-full overflow-hidden rounded-3xl bg-transparent p-0 lg:hidden">
+              <img
+                src="/images/cadell-ecosystem.webp"
+                alt="Cadell Healthcare quality ecosystem"
+                loading="lazy"
+                decoding="async"
+                className="h-full w-full object-cover object-center mix-blend-normal"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#F8FBFF]/10" />
+            </div>
+            <div className="mt-8 space-y-5 text-base leading-8 text-slate-600 md:text-lg md:leading-9">
+              <p>
+                Welcome to Cadell Healthcare, a dynamic, marketing-led pharmaceutical enterprise dedicated to improving patient outcomes through premium branded formulations.
+              </p>
+              <p>
+                By strategically partnering with elite, regulatory-compliant contract manufacturing organizations (CMOs), we focus our core expertise on what we do best: extensive medical research curation, rigorous quality governance, and high-impact healthcare marketing.
+              </p>
+              <p>
+                Every formulation that carries the Cadell name undergoes multi-tier quality testing to guarantee the highest bio-availability and purity. We don't just distribute medicine; we deliver a commitment to a healthier, more vibrant tomorrow.
+              </p>
+            </div>
+            <Link
+              to="/about"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0B2A4A] via-[#1E5AA8] to-[#1197B2] px-8 py-4 text-sm font-bold text-white shadow-[0_18px_48px_rgba(15,47,95,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(30,90,168,0.24)]"
+            >
+              Discover Our Vision
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="scroll-fade relative hidden h-full min-h-[520px] w-full overflow-hidden rounded-3xl bg-transparent p-0 lg:flex">
+            <img
+              src="/images/cadell-ecosystem.webp"
+              alt="Cadell Healthcare quality ecosystem"
+              loading="lazy"
+              decoding="async"
+              className="h-full w-full object-cover object-center mix-blend-normal"
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#F8FBFF]/10" />
+          </div>
+        </div>
+      </section>
+
       <section className="cinematic-light pb-10 pt-12 md:pb-14 md:pt-16">
         <div className="container-pad relative z-10">
           <SectionHeader
             eyebrow="Product Portfolio"
-            title="Therapeutic Healthcare Solutions Designed For Better Patient Care."
-            text="Cadell Healthcare works across tablets, capsules, syrups, nutraceuticals, diabetic care, cardiac care, and general healthcare products."
+            title="Our Therapeutic Focus Areas."
+            text="Bridging clinical needs with high-efficacy patient solutions across major healthcare verticals."
           />
           <div className="mt-12">
             <ProductGrid />
+          </div>
+        </div>
+      </section>
+
+      <section className="cinematic-bluewash pb-10 pt-14 md:pb-12 md:pt-16 lg:pb-14 lg:pt-20">
+        <div className="container-pad relative z-10">
+          <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <SectionHeader
+              eyebrow="Quality Governance & Partner Vetting"
+              title="Uncompromising Standards in Every Batch."
+              text="While Cadell Healthcare operates on a marketing and distribution model, our internal quality assurance team acts with absolute rigor. We vet our manufacturing partners through a stringent multi-point audit system, ensuring your health is never compromised."
+            />
+            <div className="rounded-[1.75rem] border border-white/70 bg-white/58 p-4 shadow-[0_22px_70px_rgba(15,47,95,0.11)] backdrop-blur-xl md:p-5">
+              <div className="mb-4 flex flex-wrap gap-2.5">
+                {['WHO-GMP Partnered', 'ISO Standards', 'Regulatory Compliant'].map((badge) => (
+                  <span
+                    key={badge}
+                    className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-3.5 py-2 text-xs font-bold text-[#1E5AA8] shadow-[0_8px_24px_rgba(15,47,95,0.06)]"
+                  >
+                    <ShieldCheck className="h-3.5 w-3.5" />
+                    {badge}
+                  </span>
+                ))}
+              </div>
+              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {qualityCommitments.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <article
+                      key={item.title}
+                      className="premium-card group relative overflow-hidden rounded-3xl border border-slate-100/70 bg-white/90 p-5 backdrop-blur-md transition-all duration-500"
+                    >
+                      <div className="absolute left-0 top-0 h-full w-1 origin-top scale-y-0 bg-blue-600 transition-transform duration-500 group-hover:scale-y-100" />
+                      <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 transition-all duration-500 group-hover:bg-blue-100">
+                        <Icon className="h-6 w-6 text-blue-700 transition-all duration-500 group-hover:scale-110" />
+                      </span>
+                      <h3 className="text-lg font-bold leading-snug text-slate-900">{item.title}</h3>
+                      <p className="mt-2.5 text-sm leading-6 text-slate-600">{item.text}</p>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <p className="mt-8 text-sm font-semibold text-[#1E5AA8]">
+            Committed to consistent quality and regulatory excellence.
+          </p>
+          <Link
+            to="/quality"
+            className="mt-4 inline-flex items-center justify-center gap-2 rounded-full border border-[#1E5AA8]/15 bg-white px-8 py-4 text-sm font-bold text-[#0B2A4A] shadow-xl shadow-blue-950/10 transition-all duration-300 hover:-translate-y-1 hover:border-[#1E5AA8]/35 hover:text-[#1E5AA8]"
+          >
+            Our Quality Framework
+            <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
+      <section id="franchise" className="signature-section py-16 md:py-24">
+        <div className="container-pad relative z-10">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#1E5AA8] sm:tracking-[0.28em]">
+              FRANCHISE OPPORTUNITIES
+            </p>
+            <h2 className="text-3xl font-semibold leading-tight tracking-normal text-[#0B2A4A] md:text-5xl">
+              Partner with Cadell Healthcare: Drive Growth Together.
+            </h2>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">
+              We are actively expanding our footprint across domestic markets. We invite passionate Pharma Distributors, Stockists, and PCD Franchise partners to lead our brands in their exclusive territories.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {franchiseCards.map((item) => (
+              <article
+                key={item.title}
+                className="group flex min-h-full w-full overflow-hidden rounded-3xl border border-slate-100/80 bg-white shadow-[0_20px_60px_rgba(15,47,95,0.1)] transition-all duration-500 hover:-translate-y-2.5 hover:border-cyan-100 hover:shadow-[0_34px_90px_rgba(15,47,95,0.17)]"
+              >
+                <div className="flex w-full flex-col">
+                  <div className="relative h-[320px] overflow-hidden rounded-t-3xl bg-blue-50">
+                    <img
+                      src={item.image}
+                      alt={item.alt}
+                      width="1200"
+                      height="1200"
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover opacity-100 transition-all duration-500 group-hover:scale-105"
+                      style={{ imageRendering: 'auto', objectPosition: item.position }}
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <span className="mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-[#1E5AA8] to-cyan-400" />
+                    <h3 className="text-xl font-semibold leading-snug text-[#0B2A4A]">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-600">{item.text}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-12 flex justify-center">
+            <a
+              href={franchiseWhatsapp}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-700 px-8 py-4 text-sm font-bold text-white shadow-xl shadow-cyan-950/20 transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:shadow-cyan-400/20"
+            >
+              Apply for Franchise / Distribution
+              <ArrowRight size={18} />
+            </a>
           </div>
         </div>
       </section>

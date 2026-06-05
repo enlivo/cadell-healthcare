@@ -3,6 +3,10 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { contact, navItems } from '../data/site.js';
 
+const navigationItems = navItems.flatMap((item) =>
+  item.path === '/quality' ? [{ label: 'Franchise', path: '/#franchise' }, item] : [item],
+);
+
 export default function Navigation() {
   const [open, setOpen] = useState(false);
 
@@ -15,18 +19,24 @@ export default function Navigation() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200/60 bg-white/95 shadow-sm shadow-blue-950/5">
-      <div className="container-pad flex min-h-24 items-center justify-between">
-        <Link to="/" className="flex items-center" onClick={() => setOpen(false)}>
+      <div className="container-pad flex min-h-20 items-center justify-between md:min-h-[92px]">
+        <Link
+          to="/"
+          className="flex min-w-[172px] items-center transition-all duration-300 hover:scale-[1.03] md:min-w-[230px]"
+          onClick={() => setOpen(false)}
+        >
           <img
-            src="/images/cadell-logo-transparent.png"
+            src="/images/cadell-header-logo.png"
             alt="Cadell Healthcare"
-            className="h-[78px] min-w-[220px] w-auto object-contain object-center"
+            loading="eager"
+            decoding="async"
+            className="h-[52px] w-auto object-contain object-center md:h-[72px]"
             style={{ imageRendering: 'auto' }}
           />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {navItems.map((item) => (
+          {navigationItems.map((item) => (
             <NavLink key={item.path} to={item.path} className={linkClass}>
               {item.label}
             </NavLink>
@@ -56,7 +66,7 @@ export default function Navigation() {
       {open && (
         <div className="border-t border-slate-200 bg-white/98 shadow-lg shadow-blue-950/5 lg:hidden">
           <nav className="container-pad grid gap-2 py-4">
-            {navItems.map((item) => (
+            {navigationItems.map((item) => (
               <NavLink key={item.path} to={item.path} className={linkClass} onClick={() => setOpen(false)}>
                 {item.label}
               </NavLink>

@@ -2,10 +2,10 @@ import { ArrowUpRight } from 'lucide-react';
 import { productCategories } from '../data/site.js';
 
 const categoryBadges = {
-  'Cardiac Care': 'CARDIOVASCULAR RANGE',
-  'General Medicine': 'THERAPEUTIC RANGE',
-  Orthopedic: 'ORTHO & PAIN SUPPORT',
-  Gynaecology: 'WOMEN’S HEALTH',
+  Cardiology: 'CARDIOVASCULAR RANGE',
+  'General Medicine & Antibiotics': 'THERAPEUTIC RANGE',
+  'Orthopedics & Analgesics': 'ORTHO & PAIN SUPPORT',
+  'Gynecology & Women’s Health': 'WOMEN’S HEALTH',
   'Diabetic Care': 'DIABETES CARE',
 };
 

@@ -22,9 +22,9 @@ export const navItems = [
 
 export const productCategories = [
   {
-    name: 'Cardiac Care',
+    name: 'Cardiology',
     slug: 'cardiac',
-    detail: 'Cardiovascular support products for clinical care and long-term patient wellness needs.',
+    detail: 'Precision formulations designed to support cardiovascular care and long-term heart health.',
     images: [
       '/images/products/cardiac/Amlosure AT.jpg',
       '/images/products/cardiac/Cilicad 10.jpg',
@@ -32,9 +32,9 @@ export const productCategories = [
     ],
   },
   {
-    name: 'General Medicine',
+    name: 'General Medicine & Antibiotics',
     slug: 'general-medicine',
-    detail: 'Everyday therapeutic products for broad clinical, retail, and institutional demand.',
+    detail: 'High-grade anti-infectives and everyday acute care management.',
     images: [
       '/images/products/general-medicine/Ambright EX.jpg',
       '/images/products/general-medicine/Azicad.jpg',
@@ -42,9 +42,9 @@ export const productCategories = [
     ],
   },
   {
-    name: 'Orthopedic',
+    name: 'Orthopedics & Analgesics',
     slug: 'orthopedic',
-    detail: 'Bone, joint, pain-management, and recovery-focused products for healthcare needs.',
+    detail: 'Fast-acting pain management and advanced bone-joint health supplements.',
     images: [
       '/images/products/orthopedic/Etocad 90.jpg',
       '/images/products/orthopedic/Onenac P.jpg',
@@ -52,9 +52,9 @@ export const productCategories = [
     ],
   },
   {
-    name: 'Gynaecology',
+    name: 'Gynecology & Women’s Health',
     slug: 'gynaecology',
-    detail: 'Women’s healthcare products supported by quality standards and patient-focused care.',
+    detail: 'Specialized care supporting women through every stage of life.',
     images: [
       '/images/products/gynaecology/Cadofer XT.jpg',
       '/images/products/gynaecology/Calcilow XT.jpg',
@@ -64,7 +64,7 @@ export const productCategories = [
   {
     name: 'Diabetic Care',
     slug: 'diabetic',
-    detail: 'Diabetes care products for long-term patient support and healthcare wellness.',
+    detail: 'Targeted formulations supporting long-term blood sugar management and metabolic wellness.',
     images: [
       '/images/products/diabetic/Accuglim M1.jpg',
       '/images/products/diabetic/Dapadel.jpg',

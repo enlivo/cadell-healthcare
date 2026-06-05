@@ -1,20 +1,33 @@
 import { Link } from 'react-router-dom';
-import { contact, navItems } from '../data/site.js';
+import { contact } from '../data/site.js';
 
 const trustBadges = ['WHO-GMP', 'ISO Certified', 'Ethical Practice', 'Quality Focus'];
+const footerLinks = [
+  { label: 'About Cadell', path: '/about' },
+  { label: 'Product Portfolio', path: '/products' },
+  { label: 'Quality Standards', path: '/quality' },
+  { label: 'Pharmacovigilance / Report Side Effects', path: '/contact' },
+  { label: 'Careers', path: '/contact' },
+  { label: 'Contact Us', path: '/contact' },
+];
 
 export default function Footer() {
   return (
     <footer className="bg-[#071d3a] text-white">
       <div className="container-pad grid gap-10 border-b border-white/10 py-14 md:grid-cols-[1.25fr_0.75fr_1fr]">
         <div>
-          <div className="mb-5 flex w-fit items-center justify-center rounded-2xl border border-white/20 bg-white px-6 py-4 shadow-xl">
+          <div className="mb-5 flex w-fit flex-col items-start justify-center">
             <img
-              src="/images/cadell-logo-transparent.png"
+              src="/images/cadell-logo.png"
               alt="Cadell Healthcare"
-              className="h-[95px] w-auto object-contain object-center"
+              loading="lazy"
+              decoding="async"
+              className="w-[260px] max-w-full object-contain object-left opacity-95 transition-all duration-300 hover:opacity-100"
               style={{ imageRendering: 'auto' }}
             />
+            <p className="mt-3 text-sm font-semibold tracking-[0.12em] text-blue-100">
+              Caring • Commitment • Excellence
+            </p>
           </div>
           <h3 className="mb-3 text-2xl font-bold text-white">
             Committed To Trusted Healthcare Solutions
@@ -26,9 +39,9 @@ export default function Footer() {
         <div>
           <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-sky-200 sm:tracking-[0.24em]">Quick Links</h3>
           <div className="grid gap-3 text-sm text-blue-100">
-            {navItems.map((item) => (
+            {footerLinks.map((item) => (
               <Link
-                key={item.path}
+                key={item.label}
                 to={item.path}
                 className="block text-slate-300 transition-all duration-300 hover:translate-x-1 hover:text-emerald-400"
               >
@@ -74,10 +87,19 @@ export default function Footer() {
             </span>
           ))}
         </div>
+        <div className="grid gap-1 text-xs leading-6 text-blue-200 md:text-right">
+          <span>Drug License Numbers: [Insert DL Number]</span>
+          <span>Corporate Identity Number (CIN): [Insert CIN]</span>
+        </div>
+      </div>
+      <div className="container-pad border-b border-white/10 py-6">
+        <p className="max-w-4xl text-xs leading-6 text-blue-200">
+          <strong className="text-white">Medical Disclaimer:</strong> The medical and product information on this website is intended solely for educational and professional informational purposes. It must not be used as a substitute for professional medical advice, diagnosis, or treatment.
+        </p>
       </div>
       <div className="py-5">
         <div className="container-pad text-xs text-blue-200">
-          © 2026 Cadell Healthcare. All rights reserved.
+          © 2026 Cadell Healthcare. All Rights Reserved.
         </div>
       </div>
     </footer>
