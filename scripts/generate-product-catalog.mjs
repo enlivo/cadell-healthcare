@@ -1,4 +1,6 @@
+import { existsSync } from 'node:fs';
 import { readdir, writeFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -14,6 +16,83 @@ const categories = [
 
 const imageExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
 
+const workbookCandidates = [
+  path.join(root, 'data', 'Book1.xlsx'),
+  path.join(root, 'data', 'Book1 (1).xlsx'),
+];
+
+const productAliases = {
+  AMBRIGHTLX: 'AMBRIGHTLS',
+  AZICAD: 'AZICAD500',
+  CADOFER: 'CADOFERSUSPENSION',
+  CALCILOWXT: 'CALCIFLOWXT',
+  CEFECT200: 'CEFECT200DT',
+  EMPAVITAM125: 'EMPAVITAM',
+  PENTODELL40: 'PANTODELL40',
+  PENTODELLDSR: 'PANTODELLDSR',
+};
+
+const decodeXml = (value) =>
+  value
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'");
+
+const normalizeProductName = (value) =>
+  String(value)
+    .toUpperCase()
+    .replace(/FORTE/g, 'FORT')
+    .replace(/\bTH([0-9])/g, 'TH $1')
+    .replace(/[^A-Z0-9]+/g, '');
+
+const readWorkbookXml = (workbookPath, filePath) =>
+  execFileSync('unzip', ['-p', workbookPath, filePath], { encoding: 'utf8' });
+
+const loadCompositions = () => {
+  const workbookPath = workbookCandidates.find((candidate) => existsSync(candidate));
+
+  if (!workbookPath) {
+    return new Map();
+  }
+
+  const sharedStringsXml = readWorkbookXml(workbookPath, 'xl/sharedStrings.xml');
+  const sheetXml = readWorkbookXml(workbookPath, 'xl/worksheets/sheet1.xml');
+  const sharedStrings = [...sharedStringsXml.matchAll(/<si>([\s\S]*?)<\/si>/g)].map((match) =>
+    decodeXml(match[1]).trim(),
+  );
+  const rows = [...sheetXml.matchAll(/<row[^>]*r="(\d+)"[^>]*>([\s\S]*?)<\/row>/g)].map((rowMatch) => {
+    const cells = {};
+
+    for (const cellMatch of rowMatch[2].matchAll(/<c([^>]*)>([\s\S]*?)<\/c>/g)) {
+      const attrs = cellMatch[1];
+      const column = attrs.match(/r="([A-Z]+)\d+"/)?.[1];
+      const type = attrs.match(/t="([^"]+)"/)?.[1];
+      const value = cellMatch[2].match(/<v>([\s\S]*?)<\/v>/)?.[1] ?? '';
+
+      if (column) {
+        cells[column] = type === 's' ? sharedStrings[Number(value)] : decodeXml(value).trim();
+      }
+    }
+
+    return cells;
+  });
+  const compositions = new Map();
+
+  rows.slice(1).forEach((row) => {
+    if (!row.B || !row.C) {
+      return;
+    }
+
+    compositions.set(normalizeProductName(row.B), row.C.trim());
+  });
+
+  return compositions;
+};
+
+const compositions = loadCompositions();
 const catalog = {};
 
 for (const category of categories) {
@@ -25,10 +104,21 @@ for (const category of categories) {
   catalog[category.slug] = {
     label: category.label,
     folder: category.folder,
-    products: files.map((file) => ({
-      name: file.replace(/\.[^.]+$/, ''),
-      image: `/images/products/${category.folder}/${file}`,
-    })),
+    products: files.map((file) => {
+      const name = file.replace(/\.[^.]+$/, '');
+      const normalizedName = normalizeProductName(name);
+      const composition = compositions.get(normalizedName) ?? compositions.get(productAliases[normalizedName]);
+      const optimizedImage = path.join(root, 'public', 'images', 'products', 'optimized', category.folder, file);
+      const imagePath = existsSync(optimizedImage)
+        ? `/images/products/optimized/${category.folder}/${file}`
+        : `/images/products/${category.folder}/${file}`;
+
+      return {
+        name,
+        image: imagePath,
+        ...(composition ? { composition } : {}),
+      };
+    }),
   };
 }
 

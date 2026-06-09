@@ -76,6 +76,15 @@ const qualityCommitments = [
   },
 ];
 
+const aboutOrbitLabels = [
+  { label: 'General Medicine', className: 'left-[8%] top-[20%]' },
+  { label: 'Cardiology', className: 'right-[10%] top-[20%]' },
+  { label: 'Gynecology', className: 'left-[7%] top-[54%]' },
+  { label: 'Diabetic Care', className: 'right-[8%] top-[54%]' },
+  { label: 'Orthopedics', className: 'left-[28%] bottom-[9%]' },
+  { label: 'Quality Assurance', className: 'right-[24%] bottom-[9%]' },
+];
+
 const franchiseCards = [
   {
     title: 'Exclusive Monopoly Rights',
@@ -117,6 +126,33 @@ const productMarqueeItems = Object.values(productCatalog).reduce((items, categor
 
   return items;
 }, []).filter(Boolean);
+
+function AboutOrbitVisual() {
+  return (
+    <div className="about-orbit relative mx-auto h-[430px] w-full max-w-[680px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.035] shadow-[0_30px_100px_rgba(0,0,0,0.24)] backdrop-blur-sm md:h-[500px]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(34,211,238,0.16),transparent_28%),radial-gradient(circle_at_50%_50%,rgba(215,182,93,0.12),transparent_48%)]" />
+      <div className="about-orbit-ring about-orbit-ring-one" />
+      <div className="about-orbit-ring about-orbit-ring-two" />
+      <div className="about-orbit-ring about-orbit-ring-three" />
+      <div className="about-orbit-dot left-[21%] top-[37%]" />
+      <div className="about-orbit-dot right-[25%] top-[29%] [animation-delay:1.4s]" />
+      <div className="about-orbit-dot bottom-[24%] left-[43%] [animation-delay:2.2s]" />
+      <div className="about-orbit-center">
+        <span>Cadell</span>
+        <strong>Healthcare</strong>
+      </div>
+      {aboutOrbitLabels.map((item, index) => (
+        <span
+          key={item.label}
+          className={`about-orbit-label ${item.className}`}
+          style={{ animationDelay: `${index * 0.35}s` }}
+        >
+          {item.label}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 const pharmacyHeroSvg = `
 <svg viewBox="0 0 640 720" fill="none" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
@@ -555,27 +591,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about-cadell" className="relative overflow-hidden bg-[linear-gradient(180deg,#F8FBFF_0%,#EEF5FB_50%,#F8FBFF_100%)] py-14 md:py-16 lg:py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_44%,rgba(30,90,168,0.12),transparent_34%),radial-gradient(circle_at_68%_58%,rgba(215,182,93,0.1),transparent_28%)]" />
+      <section id="about-cadell" className="relative overflow-hidden bg-[#061326] py-14 text-white md:py-16 lg:py-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_36%,rgba(34,211,238,0.16),transparent_32%),radial-gradient(circle_at_82%_72%,rgba(215,182,93,0.16),transparent_30%),linear-gradient(135deg,#061326_0%,#0B2A4A_54%,#071D3A_100%)]" />
+        <div className="absolute inset-0 opacity-[0.08] [background-image:radial-gradient(circle_at_center,rgba(255,255,255,0.9)_1px,transparent_1px)] [background-size:30px_30px]" />
         <div className="container-pad relative z-10 grid gap-7 lg:grid-cols-[0.45fr_0.55fr] lg:items-center lg:gap-8">
           <div className="scroll-fade max-w-[620px]">
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#1E5AA8] sm:tracking-[0.3em]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#D7B65D] sm:tracking-[0.3em]">
               ABOUT CADELL HEALTHCARE
             </p>
-            <h2 className="text-3xl font-semibold leading-[1.04] tracking-normal text-[#0B2A4A] sm:text-4xl md:text-[56px]">
+            <h2 className="text-3xl font-semibold leading-[1.04] tracking-normal text-white sm:text-4xl md:text-[56px]">
               The Cadell Promise: Quality, Integrity, Innovation.
             </h2>
-            <div className="relative mt-7 h-[360px] w-full overflow-hidden rounded-3xl bg-transparent p-0 lg:hidden">
-              <img
-                src="/images/cadell-ecosystem.webp"
-                alt="Cadell Healthcare quality ecosystem"
-                loading="lazy"
-                decoding="async"
-                className="h-full w-full object-cover object-center mix-blend-normal"
-              />
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#F8FBFF]/10" />
-            </div>
-            <div className="mt-8 space-y-5 text-base leading-8 text-slate-600 md:text-lg md:leading-9">
+            <div className="mt-8 space-y-5 text-base leading-8 text-blue-50/82 md:text-lg md:leading-9">
               <p>
                 Welcome to Cadell Healthcare, a dynamic, marketing-led pharmaceutical enterprise dedicated to improving patient outcomes through premium branded formulations.
               </p>
@@ -588,21 +615,17 @@ export default function Home() {
             </div>
             <Link
               to="/about"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#0B2A4A] via-[#1E5AA8] to-[#1197B2] px-8 py-4 text-sm font-bold text-white shadow-[0_18px_48px_rgba(15,47,95,0.18)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(30,90,168,0.24)]"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full border border-cyan-100/10 bg-gradient-to-r from-[#0B2A4A] via-[#1E5AA8] to-[#1197B2] px-8 py-4 text-sm font-bold text-white shadow-[0_18px_48px_rgba(8,42,88,0.34)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_64px_rgba(34,211,238,0.2)]"
             >
               Discover Our Vision
               <ArrowRight size={18} />
             </Link>
+            <div className="mt-10 lg:hidden">
+              <AboutOrbitVisual />
+            </div>
           </div>
-          <div className="scroll-fade relative hidden h-full min-h-[520px] w-full overflow-hidden rounded-3xl bg-transparent p-0 lg:flex">
-            <img
-              src="/images/cadell-ecosystem.webp"
-              alt="Cadell Healthcare quality ecosystem"
-              loading="lazy"
-              decoding="async"
-              className="h-full w-full object-cover object-center mix-blend-normal"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#F8FBFF]/10" />
+          <div className="scroll-fade hidden lg:block">
+            <AboutOrbitVisual />
           </div>
         </div>
       </section>

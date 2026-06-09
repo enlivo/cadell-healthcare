@@ -263,19 +263,14 @@ export default function Products() {
                 <button
                   type="button"
                   onClick={() => setActiveProductIndex(index)}
-                  className="relative flex h-[230px] w-full items-center justify-center overflow-hidden bg-[#F5F8FC] outline-none focus-visible:ring-4 focus-visible:ring-sky-100 sm:h-[285px]"
+                  className="relative flex h-[260px] w-full items-center justify-center overflow-hidden rounded-t-3xl bg-white outline-none focus-visible:ring-4 focus-visible:ring-sky-100 sm:h-[320px]"
                   aria-label={`Preview ${product.name}`}
                 >
                   <img
                     src={product.image}
-                    alt=""
-                    aria-hidden="true"
-                    className="absolute inset-0 h-full w-full scale-125 object-cover opacity-14 blur-xl"
-                  />
-                  <img
-                    src={product.image}
                     alt={product.name}
-                    className="relative z-10 h-full w-full scale-[1.35] object-contain object-center transition duration-700 group-hover:scale-105 sm:scale-[1.65]"
+                    className="h-full w-full object-contain object-center"
+                    style={{ imageRendering: 'auto', objectPosition: 'center center' }}
                     onError={(event) => {
                       event.currentTarget.style.display = 'none';
                     }}
@@ -289,6 +284,14 @@ export default function Products() {
                   <h3 className="text-xl font-semibold text-[#0B2A4A] transition-colors group-hover:text-[#1E5AA8] sm:text-2xl">
                     {product.name}
                   </h3>
+                  {product.composition && (
+                    <p className="mt-3 rounded-2xl border border-blue-100/70 bg-blue-50/65 px-4 py-3 text-sm leading-relaxed text-slate-700">
+                      <span className="block text-[11px] font-bold uppercase tracking-[0.14em] text-[#1E5AA8]">
+                        Composition
+                      </span>
+                      <span className="mt-1 block">{product.composition}</span>
+                    </p>
+                  )}
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600 sm:text-base">
                     {product.description}
                   </p>
@@ -352,6 +355,12 @@ export default function Products() {
                   {activeProduct.category}
                 </p>
                 <h3 className="mt-1 text-xl font-semibold text-[#0B2A4A]">{activeProduct.name}</h3>
+                {activeProduct.composition && (
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
+                    <span className="font-bold text-[#0B2A4A]">Composition:</span>{' '}
+                    {activeProduct.composition}
+                  </p>
+                )}
               </div>
               <div className="flex gap-2 md:hidden">
                 <button

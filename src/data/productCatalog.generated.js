@@ -6,95 +6,118 @@ export const productCatalog = {
     "products": [
       {
         "name": "Amlosure AT",
-        "image": "/images/products/cardiac/Amlosure AT.jpg"
+        "image": "/images/products/optimized/cardiac/Amlosure AT.jpg",
+        "composition": "Amlodipine 5mg, Atenolol 50mg"
       },
       {
         "name": "Cilicad 5",
-        "image": "/images/products/cardiac/Cilicad 5.jpg"
+        "image": "/images/products/optimized/cardiac/Cilicad 5.jpg",
+        "composition": "Cilnidipine 5mg"
       },
       {
         "name": "Cilicad 10",
-        "image": "/images/products/cardiac/Cilicad 10.jpg"
+        "image": "/images/products/optimized/cardiac/Cilicad 10.jpg",
+        "composition": "Cilnidipine 10mg"
       },
       {
         "name": "Cilicad T",
-        "image": "/images/products/cardiac/Cilicad T.jpg"
+        "image": "/images/products/optimized/cardiac/Cilicad T.jpg",
+        "composition": "Cilnidipine 10 mg + Telmisartan 40 mg"
       },
       {
         "name": "Olmicheck 20",
-        "image": "/images/products/cardiac/Olmicheck 20.jpg"
+        "image": "/images/products/optimized/cardiac/Olmicheck 20.jpg",
+        "composition": "Olmisartan 20mg"
       },
       {
         "name": "Olmicheck 40",
-        "image": "/images/products/cardiac/Olmicheck 40.jpg"
+        "image": "/images/products/optimized/cardiac/Olmicheck 40.jpg",
+        "composition": "Olmesartan 40mg"
       },
       {
         "name": "Olmicheck H",
-        "image": "/images/products/cardiac/Olmicheck H.jpg"
+        "image": "/images/products/optimized/cardiac/Olmicheck H.jpg",
+        "composition": "Olmesartan 40 +Hydrochlorothiazide 12.5 mg"
       },
       {
         "name": "Ontel 20",
-        "image": "/images/products/cardiac/Ontel 20.jpg"
+        "image": "/images/products/optimized/cardiac/Ontel 20.jpg",
+        "composition": "Telmisartan 20mg"
       },
       {
         "name": "Ontel 40",
-        "image": "/images/products/cardiac/Ontel 40.jpg"
+        "image": "/images/products/optimized/cardiac/Ontel 40.jpg",
+        "composition": "Telmisartan 40mg"
       },
       {
         "name": "Ontel AM",
-        "image": "/images/products/cardiac/Ontel AM.jpg"
+        "image": "/images/products/optimized/cardiac/Ontel AM.jpg",
+        "composition": "Telmisartan 40mg, Amlodipine 5mg"
       },
       {
         "name": "Ontel AMH",
-        "image": "/images/products/cardiac/Ontel AMH.jpg"
+        "image": "/images/products/optimized/cardiac/Ontel AMH.jpg",
+        "composition": "Telmisartan 40mg, Amlodipine 5mg, Hydrochlorothiazide 12.5mg"
       },
       {
         "name": "Ontel H",
-        "image": "/images/products/cardiac/Ontel H.jpg"
+        "image": "/images/products/optimized/cardiac/Ontel H.jpg",
+        "composition": "Telmisartan 40mg, Hydrochlorothiazide 12.5mg"
       },
       {
         "name": "Powermet AM",
-        "image": "/images/products/cardiac/Powermet AM.jpg"
+        "image": "/images/products/optimized/cardiac/Powermet AM.jpg",
+        "composition": "Metoprolol Succinate Extended Release 50mg, Amlodipine 5mg"
       },
       {
         "name": "Powermet XL 25",
-        "image": "/images/products/cardiac/Powermet XL 25.jpg"
+        "image": "/images/products/optimized/cardiac/Powermet XL 25.jpg",
+        "composition": "Metoprolol Succinate Extended Release 25mg"
       },
       {
         "name": "Powermet XL 50",
-        "image": "/images/products/cardiac/Powermet XL 50.jpg"
+        "image": "/images/products/optimized/cardiac/Powermet XL 50.jpg",
+        "composition": "Metoprolol Succinate Extended Release 50mg"
       },
       {
         "name": "Rosucad 5",
-        "image": "/images/products/cardiac/Rosucad 5.jpg"
+        "image": "/images/products/optimized/cardiac/Rosucad 5.jpg",
+        "composition": "Rosuvastatin 5"
       },
       {
         "name": "Rosucad 10 F",
-        "image": "/images/products/cardiac/Rosucad 10 F.jpg"
+        "image": "/images/products/optimized/cardiac/Rosucad 10 F.jpg",
+        "composition": "Rosuvastatin 10 , Micronised Fenofibrate 145mg"
       },
       {
         "name": "Rosucad 10",
-        "image": "/images/products/cardiac/Rosucad 10.jpg"
+        "image": "/images/products/optimized/cardiac/Rosucad 10.jpg",
+        "composition": "Rosuvastatin 10"
       },
       {
         "name": "Rosucad Gold 10",
-        "image": "/images/products/cardiac/Rosucad Gold 10.jpg"
+        "image": "/images/products/optimized/cardiac/Rosucad Gold 10.jpg",
+        "composition": "Rosuvastatin 10 mg,  Aspirin 75 MG ,  Clopidogrel 75 MG"
       },
       {
         "name": "Rosucad Gold 20",
-        "image": "/images/products/cardiac/Rosucad Gold 20.jpg"
+        "image": "/images/products/optimized/cardiac/Rosucad Gold 20.jpg",
+        "composition": "Rosuvastatin 20 mg, Aspirin 75 MG + Clopidogrel 75 MG"
       },
       {
         "name": "Thyrovo 12.5",
-        "image": "/images/products/cardiac/Thyrovo 12.5.jpg"
+        "image": "/images/products/optimized/cardiac/Thyrovo 12.5.jpg",
+        "composition": "Thyroxine Sodium IP 12.5 mg"
       },
       {
         "name": "Thyrovo 25",
-        "image": "/images/products/cardiac/Thyrovo 25.jpg"
+        "image": "/images/products/optimized/cardiac/Thyrovo 25.jpg",
+        "composition": "Thyroxine Sodium IP 25 mg"
       },
       {
         "name": "Thyrovo 50",
-        "image": "/images/products/cardiac/Thyrovo 50.jpg"
+        "image": "/images/products/optimized/cardiac/Thyrovo 50.jpg",
+        "composition": "Thyroxine Sodium IP 50 mg"
       }
     ]
   },
@@ -104,127 +127,158 @@ export const productCatalog = {
     "products": [
       {
         "name": "Accuglim M1 Fort",
-        "image": "/images/products/diabetic/Accuglim M1 Fort.jpg"
+        "image": "/images/products/optimized/diabetic/Accuglim M1 Fort.jpg",
+        "composition": "Glimepiride 1mg, Metformin 1000 Sustained Release"
       },
       {
         "name": "Accuglim M1",
-        "image": "/images/products/diabetic/Accuglim M1.jpg"
+        "image": "/images/products/optimized/diabetic/Accuglim M1.jpg",
+        "composition": "Glimepiride 1mg,Metformin 500 Sustained Release"
       },
       {
         "name": "Accuglim M2 Fort",
-        "image": "/images/products/diabetic/Accuglim M2 Fort.jpg"
+        "image": "/images/products/optimized/diabetic/Accuglim M2 Fort.jpg",
+        "composition": "Glimepiride 2mg, Metformin 1000 Sustained Release"
       },
       {
         "name": "Accuglim M2",
-        "image": "/images/products/diabetic/Accuglim M2.jpg"
+        "image": "/images/products/optimized/diabetic/Accuglim M2.jpg",
+        "composition": "Glimepiride 2mg, Metformin 500 Sustained Release"
       },
       {
         "name": "Accuglim MP1",
-        "image": "/images/products/diabetic/Accuglim MP1.jpg"
+        "image": "/images/products/optimized/diabetic/Accuglim MP1.jpg",
+        "composition": "Glimepiride 1mg,Metformin 500 Sustained Release,Pioglitazone 15mg"
       },
       {
         "name": "Accuglim MP2",
-        "image": "/images/products/diabetic/Accuglim MP2.jpg"
+        "image": "/images/products/optimized/diabetic/Accuglim MP2.jpg",
+        "composition": "Glimepiride 2 mg, Metformin 500 Sustained Release, Pioglitazone 15 mg"
       },
       {
         "name": "Dapadel M",
-        "image": "/images/products/diabetic/Dapadel M.jpg"
+        "image": "/images/products/optimized/diabetic/Dapadel M.jpg",
+        "composition": "Dapagliflozin 10 mg + Metformin 500 mg"
       },
       {
         "name": "Dapadel",
-        "image": "/images/products/diabetic/Dapadel.jpg"
+        "image": "/images/products/optimized/diabetic/Dapadel.jpg",
+        "composition": "Dapagliflozin 10 mg"
       },
       {
         "name": "Empavita 10",
-        "image": "/images/products/diabetic/Empavita 10.jpg"
+        "image": "/images/products/optimized/diabetic/Empavita 10.jpg",
+        "composition": "EMPAGLIFLOZIN 10 MG"
       },
       {
         "name": "Empavita 25",
-        "image": "/images/products/diabetic/Empavita 25.jpg"
+        "image": "/images/products/optimized/diabetic/Empavita 25.jpg",
+        "composition": "EMPAGLIFLOZIN 25 MG"
       },
       {
         "name": "Empavita L5",
-        "image": "/images/products/diabetic/Empavita L5.jpg"
+        "image": "/images/products/optimized/diabetic/Empavita L5.jpg",
+        "composition": "EMPAGLIFLOZIN 10 MG  + LINAGLIPTIN 5 MG"
       },
       {
         "name": "Empavita M 12.5",
-        "image": "/images/products/diabetic/Empavita M 12.5.jpg"
+        "image": "/images/products/optimized/diabetic/Empavita M 12.5.jpg",
+        "composition": "EMPAGLIFLOZIN  12.5MG + METFORMIN HYDROCHLORIDE  500MG"
       },
       {
         "name": "Rejufast OD",
-        "image": "/images/products/diabetic/Rejufast OD.jpg"
+        "image": "/images/products/optimized/diabetic/Rejufast OD.jpg",
+        "composition": "Mecobalamin 1500 mcg, cholecalciferol 1000 IU, Folic Acid 1.5mg, Pyridoxine 3 mg, ALA 100mg, Vit D3 1000 IU"
       },
       {
         "name": "Rejufast PG",
-        "image": "/images/products/diabetic/Rejufast PG.jpg"
+        "image": "/images/products/optimized/diabetic/Rejufast PG.jpg",
+        "composition": "Mecobalamin 750 mg, Pregabalin 75mg, Folic Acid 1.5 mg, Pyridoxine 3mg , Alpha Lipoic Acid 100 mg"
       },
       {
         "name": "Sitapil 50",
-        "image": "/images/products/diabetic/Sitapil 50.jpg"
+        "image": "/images/products/optimized/diabetic/Sitapil 50.jpg",
+        "composition": "Sitagliptin 50 mg"
       },
       {
         "name": "Sitapil 100",
-        "image": "/images/products/diabetic/Sitapil 100.jpg"
+        "image": "/images/products/optimized/diabetic/Sitapil 100.jpg",
+        "composition": "Sitagliptin 100 mg"
       },
       {
         "name": "Sitapil D",
-        "image": "/images/products/diabetic/Sitapil D.jpg"
+        "image": "/images/products/optimized/diabetic/Sitapil D.jpg",
+        "composition": "Sitagliptin 100 mg + Dapagliflozin 10 mg"
       },
       {
         "name": "Sitapil DM 500",
-        "image": "/images/products/diabetic/Sitapil DM 500.jpg"
+        "image": "/images/products/optimized/diabetic/Sitapil DM 500.jpg",
+        "composition": "Sitagliptin 100 mg + Dapagliflozin 10 mg + Metformin Hydrochloride 500mg"
       },
       {
         "name": "Sitapil GM Fort",
-        "image": "/images/products/diabetic/Sitapil GM Fort.jpg"
+        "image": "/images/products/optimized/diabetic/Sitapil GM Fort.jpg",
+        "composition": "Sitagliptin 50 MG+Glimepiride 2 MG +Metformin Hydrochloride 1000 MG"
       },
       {
         "name": "Sitapil M 50",
-        "image": "/images/products/diabetic/Sitapil M 50.jpg"
+        "image": "/images/products/optimized/diabetic/Sitapil M 50.jpg",
+        "composition": "Sitagliptin 50 mg + Metformin 500 mg"
       },
       {
         "name": "Tenlicad M 20",
-        "image": "/images/products/diabetic/Tenlicad M 20.jpg"
+        "image": "/images/products/optimized/diabetic/Tenlicad M 20.jpg",
+        "composition": "Tenligliptin 20 mg + Metformin 500 mg"
       },
       {
         "name": "Vilapil 50",
-        "image": "/images/products/diabetic/Vilapil 50.jpg"
+        "image": "/images/products/optimized/diabetic/Vilapil 50.jpg",
+        "composition": "Vildagliptin 50mg"
       },
       {
         "name": "Vilapil 100 SR",
-        "image": "/images/products/diabetic/Vilapil 100 SR.jpg"
+        "image": "/images/products/optimized/diabetic/Vilapil 100 SR.jpg",
+        "composition": "Vildagliptin 100mg Sustained Released.."
       },
       {
         "name": "Vilapil D",
-        "image": "/images/products/diabetic/Vilapil D.jpg"
+        "image": "/images/products/optimized/diabetic/Vilapil D.jpg",
+        "composition": "Vildaglipin 100 mg (SR) + Dapagliflozin 10 mg"
       },
       {
         "name": "Vilapil M",
-        "image": "/images/products/diabetic/Vilapil M.jpg"
+        "image": "/images/products/optimized/diabetic/Vilapil M.jpg",
+        "composition": "Vildagliptin 50 + Metformin 500"
       },
       {
         "name": "Volpost 0.2",
-        "image": "/images/products/diabetic/Volpost 0.2.jpg"
+        "image": "/images/products/optimized/diabetic/Volpost 0.2.jpg",
+        "composition": "Voglibose 0.2mg"
       },
       {
         "name": "Volpost 0.3",
-        "image": "/images/products/diabetic/Volpost 0.3.jpg"
+        "image": "/images/products/optimized/diabetic/Volpost 0.3.jpg",
+        "composition": "Voglibose 0.3mg"
       },
       {
         "name": "Volpost GM 1",
-        "image": "/images/products/diabetic/Volpost GM 1.jpg"
+        "image": "/images/products/optimized/diabetic/Volpost GM 1.jpg",
+        "composition": "Voglibose 0.2mg ,Metformin 500 mg SR,Glimepiride 1mg"
       },
       {
         "name": "Volpost GM 2",
-        "image": "/images/products/diabetic/Volpost GM 2.jpg"
+        "image": "/images/products/optimized/diabetic/Volpost GM 2.jpg",
+        "composition": "Voglibose 0.2mg ,Metformin 500 mg SR,Glimepiride 2mg"
       },
       {
         "name": "Volpost M 0.2",
-        "image": "/images/products/diabetic/Volpost M 0.2.jpg"
+        "image": "/images/products/optimized/diabetic/Volpost M 0.2.jpg",
+        "composition": "Voglibose 0.2mg ,Metformin 500 mg SR"
       },
       {
         "name": "Volpost M 0.3",
-        "image": "/images/products/diabetic/Volpost M 0.3.jpg"
+        "image": "/images/products/optimized/diabetic/Volpost M 0.3.jpg",
+        "composition": "Voglibose 0.3mg, Metformin 500 mg SR"
       }
     ]
   },
@@ -234,51 +288,63 @@ export const productCatalog = {
     "products": [
       {
         "name": "Ambright EX",
-        "image": "/images/products/general-medicine/Ambright EX.jpg"
+        "image": "/images/products/optimized/general-medicine/Ambright EX.jpg",
+        "composition": "Terbutaline 1.25mg, Bromhexine Hcl 4 mg, Guaifenesin 50 mg,menthol 0.5 mg,/5 mL."
       },
       {
         "name": "Ambright LX",
-        "image": "/images/products/general-medicine/Ambright LX.jpg"
+        "image": "/images/products/optimized/general-medicine/Ambright LX.jpg",
+        "composition": "Levosalbutamol 1mg , Ambroxol hydrochloride 30 mg,Guaiphenesin 50 mg Syrup/5 ml"
       },
       {
         "name": "Azicad",
-        "image": "/images/products/general-medicine/Azicad.jpg"
+        "image": "/images/products/optimized/general-medicine/Azicad.jpg",
+        "composition": "Azithromycin 500 mg"
       },
       {
         "name": "Cefect 200",
-        "image": "/images/products/general-medicine/Cefect 200.jpg"
+        "image": "/images/products/optimized/general-medicine/Cefect 200.jpg",
+        "composition": "Cefixime Trihydrate 200mg + Lactic Acid Bacillus 2.5 billion Spores"
       },
       {
         "name": "Cefect O",
-        "image": "/images/products/general-medicine/Cefect O.jpg"
+        "image": "/images/products/optimized/general-medicine/Cefect O.jpg",
+        "composition": "CefiximeTrihydrate 200mg + Ofloxacin 200mg"
       },
       {
         "name": "Cetwet M",
-        "image": "/images/products/general-medicine/Cetwet M.jpg"
+        "image": "/images/products/optimized/general-medicine/Cetwet M.jpg",
+        "composition": "Levocetirizine 5 mg, Montelukast 10mg Tab"
       },
       {
         "name": "Pentodell 40",
-        "image": "/images/products/general-medicine/Pentodell 40.jpg"
+        "image": "/images/products/optimized/general-medicine/Pentodell 40.jpg",
+        "composition": "Pantoprazole 40mg"
       },
       {
         "name": "Pentodell DSR",
-        "image": "/images/products/general-medicine/Pentodell DSR.jpg"
+        "image": "/images/products/optimized/general-medicine/Pentodell DSR.jpg",
+        "composition": "Pantoprazole 40mg, Domperidone 30mg Prolonged Release"
       },
       {
         "name": "Rabirap D",
-        "image": "/images/products/general-medicine/Rabirap D.jpg"
+        "image": "/images/products/optimized/general-medicine/Rabirap D.jpg",
+        "composition": "Rabeprazole 20, Domeridone 30 mg SR"
       },
       {
         "name": "Thyrovo 12.5",
-        "image": "/images/products/general-medicine/Thyrovo 12.5.jpg"
+        "image": "/images/products/optimized/general-medicine/Thyrovo 12.5.jpg",
+        "composition": "Thyroxine Sodium IP 12.5 mg"
       },
       {
         "name": "Thyrovo 25",
-        "image": "/images/products/general-medicine/Thyrovo 25.jpg"
+        "image": "/images/products/optimized/general-medicine/Thyrovo 25.jpg",
+        "composition": "Thyroxine Sodium IP 25 mg"
       },
       {
         "name": "Thyrovo 50",
-        "image": "/images/products/general-medicine/Thyrovo 50.jpg"
+        "image": "/images/products/optimized/general-medicine/Thyrovo 50.jpg",
+        "composition": "Thyroxine Sodium IP 50 mg"
       }
     ]
   },
@@ -288,27 +354,33 @@ export const productCatalog = {
     "products": [
       {
         "name": "Cadofer XT",
-        "image": "/images/products/gynaecology/Cadofer XT.jpg"
+        "image": "/images/products/optimized/gynaecology/Cadofer XT.jpg",
+        "composition": "Ferrous ascorbate 100mg, Folic Acid 1.5mg , Zinc 22.5 mg"
       },
       {
         "name": "Cadofer",
-        "image": "/images/products/gynaecology/Cadofer.jpg"
+        "image": "/images/products/optimized/gynaecology/Cadofer.jpg",
+        "composition": "Ferrous ascorbate 30mg, Folic Acid 550 mg - suspension"
       },
       {
         "name": "Calcilow XT",
-        "image": "/images/products/gynaecology/Calcilow XT.jpg"
+        "image": "/images/products/optimized/gynaecology/Calcilow XT.jpg",
+        "composition": "Calcium Carbonate IP 1250 mg, Eq. Elemental Calcium 500 mg, Vit D3 IP 2000 IU, \r\nMethylcobalamin IP 1500 mcg,L Methylfolate  Calcium1 mg,Pyridoxal-5-Phosphate 20 mg"
       },
       {
         "name": "Fitpro Mom",
-        "image": "/images/products/gynaecology/Fitpro Mom.jpg"
+        "image": "/images/products/optimized/gynaecology/Fitpro Mom.jpg",
+        "composition": "Protein Powder"
       },
       {
         "name": "Thyrovo 25",
-        "image": "/images/products/gynaecology/Thyrovo 25.jpg"
+        "image": "/images/products/optimized/gynaecology/Thyrovo 25.jpg",
+        "composition": "Thyroxine Sodium IP 25 mg"
       },
       {
         "name": "Thyrovo 50",
-        "image": "/images/products/gynaecology/Thyrovo 50.jpg"
+        "image": "/images/products/optimized/gynaecology/Thyrovo 50.jpg",
+        "composition": "Thyroxine Sodium IP 50 mg"
       }
     ]
   },
@@ -318,47 +390,58 @@ export const productCatalog = {
     "products": [
       {
         "name": "Calcilow XT",
-        "image": "/images/products/orthopedic/Calcilow XT.jpg"
+        "image": "/images/products/optimized/orthopedic/Calcilow XT.jpg",
+        "composition": "Calcium Carbonate IP 1250 mg, Eq. Elemental Calcium 500 mg, Vit D3 IP 2000 IU, \r\nMethylcobalamin IP 1500 mcg,L Methylfolate  Calcium1 mg,Pyridoxal-5-Phosphate 20 mg"
       },
       {
         "name": "Etocad 90",
-        "image": "/images/products/orthopedic/Etocad 90.jpg"
+        "image": "/images/products/optimized/orthopedic/Etocad 90.jpg",
+        "composition": "Etoricoxib 90 mg"
       },
       {
         "name": "Etocad TH4",
-        "image": "/images/products/orthopedic/Etocad TH4.jpg"
+        "image": "/images/products/optimized/orthopedic/Etocad TH4.jpg",
+        "composition": "Etoricoxib 60 mg + Thiocolchicoside 4mg"
       },
       {
         "name": "Etocad",
-        "image": "/images/products/orthopedic/Etocad.jpg"
+        "image": "/images/products/optimized/orthopedic/Etocad.jpg",
+        "composition": "Etoricoxib 60 mg"
       },
       {
         "name": "Onenac P",
-        "image": "/images/products/orthopedic/Onenac P.jpg"
+        "image": "/images/products/optimized/orthopedic/Onenac P.jpg",
+        "composition": "Aceclofenac 100mg, Paracetamol 325mg"
       },
       {
         "name": "Onenac SP",
-        "image": "/images/products/orthopedic/Onenac SP.jpg"
+        "image": "/images/products/optimized/orthopedic/Onenac SP.jpg",
+        "composition": "Aceclofenac 100mg, Paracetamol 325mg ,Serratiopeptidase 10mg"
       },
       {
         "name": "Onenac TH 4",
-        "image": "/images/products/orthopedic/Onenac TH 4.jpg"
+        "image": "/images/products/optimized/orthopedic/Onenac TH 4.jpg",
+        "composition": "Aceclofenac 100 mg + Thiocolchicoside 4 mg"
       },
       {
         "name": "Onenac TH 8",
-        "image": "/images/products/orthopedic/Onenac TH 8.jpg"
+        "image": "/images/products/optimized/orthopedic/Onenac TH 8.jpg",
+        "composition": "Aceclofenac 100 mg + Thiocolchicoside 8 mg"
       },
       {
         "name": "Rabirap D",
-        "image": "/images/products/orthopedic/Rabirap D.jpg"
+        "image": "/images/products/optimized/orthopedic/Rabirap D.jpg",
+        "composition": "Rabeprazole 20, Domeridone 30 mg SR"
       },
       {
         "name": "Rejufast OD",
-        "image": "/images/products/orthopedic/Rejufast OD.jpg"
+        "image": "/images/products/optimized/orthopedic/Rejufast OD.jpg",
+        "composition": "Mecobalamin 1500 mcg, cholecalciferol 1000 IU, Folic Acid 1.5mg, Pyridoxine 3 mg, ALA 100mg, Vit D3 1000 IU"
       },
       {
         "name": "Rejufast PG",
-        "image": "/images/products/orthopedic/Rejufast PG.jpg"
+        "image": "/images/products/optimized/orthopedic/Rejufast PG.jpg",
+        "composition": "Mecobalamin 750 mg, Pregabalin 75mg, Folic Acid 1.5 mg, Pyridoxine 3mg , Alpha Lipoic Acid 100 mg"
       }
     ]
   }
