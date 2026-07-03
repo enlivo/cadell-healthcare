@@ -95,6 +95,11 @@ export default function Contact() {
                   value: <a href={contact.adminPhoneHref} className="transition hover:text-[#1E5AA8]">{contact.adminPhone}</a>,
                 },
                 {
+                  icon: Phone,
+                  label: 'Landline',
+                  value: <a href={contact.landlineHref} className="transition hover:text-[#1E5AA8]">{contact.landline}</a>,
+                },
+                {
                   icon: Mail,
                   label: 'Email',
                   value: <a href={`mailto:${contact.email}`} className="transition hover:text-[#1E5AA8]">{contact.email}</a>,
@@ -177,7 +182,7 @@ export default function Contact() {
             <div className="overflow-hidden rounded-[2rem] border border-slate-100/70 bg-white shadow-2xl shadow-blue-950/8">
               <iframe
                 title="Cadell Healthcare office map"
-                src="https://www.google.com/maps?q=Cadell%20Healthcare%20Pvt%20Ltd%20Mysuru&output=embed"
+                src="https://www.google.com/maps?q=%23%20C-69%2C%20Ground%20Floor%2C%20Industrial%20Area%2C%20Yadavagiri%2C%20Mysuru%20-%20570020&output=embed"
                 className="h-[320px] w-full border-0 sm:h-[420px] lg:h-full lg:min-h-[520px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

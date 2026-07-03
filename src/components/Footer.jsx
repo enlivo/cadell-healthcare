@@ -61,6 +61,10 @@ export default function Footer() {
               <strong className="block text-white">Administration & General Enquiries:</strong>
               <a href={contact.adminPhoneHref} className="transition hover:text-white">{contact.adminPhone}</a>
             </div>
+            <div>
+              <strong className="block text-white">Landline:</strong>
+              <a href={contact.landlineHref} className="transition hover:text-white">{contact.landline}</a>
+            </div>
             <span className="break-words">
               <strong className="text-white">Email:</strong>{' '}
               <a href="mailto:info@cadellhealthcare.com" className="transition hover:text-white">
@@ -70,7 +74,7 @@ export default function Footer() {
             <span>
               <strong className="text-white">Location:</strong>{' '}
               <a href={contact.maps} target="_blank" rel="noreferrer" className="transition hover:text-white">
-                Mysuru, Karnataka, India
+                {contact.address}
               </a>
             </span>
           </div>

@@ -6,9 +6,11 @@ export const contact = {
   adminPhone: '+91 89717 99998',
   adminPhoneHref: 'tel:+918971799998',
   email: 'info@cadellhealthcare.com',
-  address: 'Mysuru, Karnataka, India',
+  address: '# C-69, Ground Floor, Industrial Area, Yadavagiri, Mysuru - 570020, Karnataka, India',
+  landline: '0821-4267077',
+  landlineHref: 'tel:+918214267077',
   whatsapp: 'https://wa.me/918971799998?text=Hello%20Cadell%20Healthcare%2C%20I%20would%20like%20to%20enquire%20about%20your%20products.',
-  maps: 'https://www.google.com/maps/search/?api=1&query=Cadell%20Healthcare%20Pvt%20Ltd%20Mysuru',
+  maps: 'https://www.google.com/maps/search/?api=1&query=%23%20C-69%2C%20Ground%20Floor%2C%20Industrial%20Area%2C%20Yadavagiri%2C%20Mysuru%20-%20570020',
 };
 
 export const navItems = [
