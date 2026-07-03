@@ -1,6 +1,7 @@
 import { ArrowRight, ChevronLeft, ChevronRight, Send, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { productCatalog } from '../data/productCatalog.generated.js';
+import { productNameColors } from '../data/productNameColors.js';
 
 const categoryFilters = [
   { slug: 'all', label: 'All' },
@@ -281,7 +282,10 @@ export default function Products() {
                   <p className="mb-4 inline-flex w-fit rounded-full bg-[#1E5AA8]/5 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-[#0B2A4A] sm:text-xs sm:tracking-[0.18em]">
                     {product.category}
                   </p>
-                  <h3 className="text-xl font-semibold text-[#0B2A4A] transition-colors group-hover:text-[#1E5AA8] sm:text-2xl">
+                  <h3
+                    className="text-xl font-semibold sm:text-2xl"
+                    style={{ color: productNameColors[product.name] || '#0B2A4A' }}
+                  >
                     {product.name}
                   </h3>
                   {product.composition && (
@@ -354,7 +358,10 @@ export default function Products() {
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1E5AA8]">
                   {activeProduct.category}
                 </p>
-                <h3 className="mt-1 text-xl font-semibold text-[#0B2A4A]">{activeProduct.name}</h3>
+                <h3
+                  className="mt-1 text-xl font-semibold"
+                  style={{ color: productNameColors[activeProduct.name] || '#0B2A4A' }}
+                >{activeProduct.name}</h3>
                 {activeProduct.composition && (
                   <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-600">
                     <span className="font-bold text-[#0B2A4A]">Composition:</span>{' '}
