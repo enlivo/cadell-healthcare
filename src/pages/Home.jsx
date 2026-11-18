@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CTASection from '../components/CTASection.jsx';
+import HeroCinematic from '../components/HeroCinematic.jsx';
 import ProductGrid from '../components/ProductGrid.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { productCatalog } from '../data/productCatalog.generated.js';
@@ -470,87 +471,7 @@ const pharmacyHeroSvg = `
 export default function Home() {
   return (
     <main className="page-shell">
-      <section
-        className="relative min-h-[100svh] overflow-hidden px-0 pt-[88px] md:pt-24"
-        style={{
-          background: 'linear-gradient(135deg, #020817 0%, #031b34 40%, #04294d 100%)',
-        }}
-      >
-        <img
-          src="/hero-healthcare-bg.png"
-          alt=""
-          aria-hidden="true"
-          className="hero-bg-drift hero-image-reveal absolute inset-0 h-full w-full scale-105 object-cover object-center opacity-82 md:object-[center_right]"
-          style={{ filter: 'brightness(1.08) contrast(1.08) saturate(1.04)' }}
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(2,12,27,0.95)_0%,rgba(2,12,27,0.9)_40%,rgba(2,12,27,0.48)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(2,8,23,0)_38%,rgba(0,0,0,0.38)_100%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_74%_34%,rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_82%_62%,rgba(59,130,246,0.12),transparent_34%),linear-gradient(180deg,rgba(4,41,77,0.18)_0%,rgba(2,8,23,0.32)_100%)]" />
-        <div className="pointer-events-none absolute right-[-10%] top-[16%] h-[42rem] w-[42rem] rounded-full bg-cyan-300/10 blur-[110px]" />
-        <div className="pointer-events-none absolute right-[14%] top-[34%] h-72 w-72 rounded-full bg-blue-400/12 blur-[70px]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_42%,rgba(0,0,0,0.42)_100%)]" />
-        <div className="hero-capsule-spotlight absolute right-[6%] top-[18%] h-[34rem] w-[34rem] rounded-full" />
-        <div className="hero-glow-pulse absolute right-[9%] top-[24%] h-96 w-96 rounded-full bg-cyan-300/14" />
-        <span className="hero-capsule-glint right-[18%] top-[36%]" />
-        <span className="hero-capsule-glint right-[13%] top-[43%] [animation-delay:2.4s]" />
-        <span className="hero-capsule-glint right-[25%] top-[50%] [animation-delay:4.1s]" />
-        <span className="hero-premium-particle left-[14%] top-[38%]" />
-        <span className="hero-premium-particle right-[18%] top-[28%] [animation-delay:1.8s]" />
-        <span className="hero-premium-particle bottom-[18%] right-[36%] [animation-delay:3.2s]" />
-        <span className="hero-premium-particle right-[9%] bottom-[30%] [animation-delay:4.4s]" />
-        <span className="hero-premium-particle left-[46%] top-[22%] [animation-delay:5.6s]" />
-
-        <div className="relative z-10 mx-auto max-w-[1320px] px-6 pb-16 pt-10 sm:px-8 md:pb-24 md:pt-10 lg:px-10">
-          <div className="hero-text-fade max-w-2xl">
-            <div className="mb-8 inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-200/10 bg-white/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-cyan-100 shadow-[0_10px_40px_rgba(0,0,0,0.16)] backdrop-blur-md sm:text-xs sm:tracking-[0.24em]">
-              <Cross className="h-4 w-4" />
-              <span className="min-w-0">Pharmaceutical & Healthcare Solutions</span>
-            </div>
-            <h1 className="max-w-[11ch] text-[44px] font-bold leading-[0.96] tracking-normal text-white drop-shadow-[0_14px_38px_rgba(0,0,0,0.42)] sm:text-6xl md:text-[72px]">
-              Advancing
-              <br />
-              Healthcare.
-              <br />
-              Empowering
-              <br />
-              Lives.
-            </h1>
-            <p className="mt-9 max-w-xl text-base leading-8 text-blue-50/90 drop-shadow-[0_8px_24px_rgba(0,0,0,0.28)] md:text-lg">
-              At Cadell Healthcare, we blend scientific integrity with marketing excellence to deliver premium, therapeutic formulations manufactured at world-class, WHO-GMP certified facilities.
-            </p>
-            <div className="mt-9 flex flex-col gap-5 sm:flex-row">
-              <Link
-                to="/products"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-cyan-100/10 bg-gradient-to-r from-[#082A58] via-[#0E4D86] to-[#1197B2] px-9 py-4 text-sm font-bold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_45px_rgba(8,42,88,0.34)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:brightness-110 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_22px_60px_rgba(34,211,238,0.22)] sm:w-auto"
-              >
-                Explore Our Brand Portfolio
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-white px-9 py-4 text-sm font-bold text-[#06213F] shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_14px_36px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-cyan-100 hover:text-[#06213F] hover:shadow-[0_0_30px_rgba(34,211,238,0.35)] sm:w-auto"
-              >
-                <MessageCircle size={18} />
-                Partner With Us
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute inset-x-0 bottom-0 z-10 h-14 overflow-hidden border-t border-white/10 bg-[#071A33]/70 backdrop-blur-md">
-          <div className="group/hero-marquee flex h-full items-center overflow-hidden">
-            <div className="flex w-max items-center motion-safe:animate-[trust-marquee_110s_linear_infinite] group-hover/hero-marquee:[animation-play-state:paused]">
-              {[...productMarqueeItems, ...productMarqueeItems].map((item, index) => (
-                <div key={`${item}-${index}`} className="flex items-center">
-                  <span className="px-6 text-[11px] font-bold uppercase tracking-[0.24em] text-white/75 sm:px-8">
-                    {item}
-                  </span>
-                  <span className="h-1 w-1 rounded-full bg-cyan-200/60 shadow-[0_0_10px_rgba(125,211,252,0.42)]" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroCinematic />
 
       <section className="cinematic-light py-9 md:py-10" aria-label="Core healthcare pillars">
         <div className="relative z-10 mx-auto w-[min(1240px,calc(100%-32px))]">
